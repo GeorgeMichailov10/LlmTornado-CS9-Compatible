@@ -2,7 +2,8 @@ using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class CodeInterpreterOutputs
 {
@@ -24,4 +25,5 @@ public sealed class CodeInterpreterOutputs
     /// </summary>
     [JsonProperty("image")]
     public ImageFile Image { get; private set; }
+}
 }

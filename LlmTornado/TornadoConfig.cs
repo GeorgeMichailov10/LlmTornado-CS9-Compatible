@@ -2,7 +2,8 @@ using System;
 using System.Net.Http;
 using LlmTornado.Code;
 
-namespace LlmTornado;
+namespace LlmTornado
+{
 
 /// <summary>
 ///     Configuration of Tornado. Use this early, before constructing any <see cref="TornadoApi"/> instances. 
@@ -14,4 +15,5 @@ public static class TornadoConfig
     ///     the default way, you are responsible for constructing and returning your own <see cref="HttpClient"/> instance.
     /// </summary>
     public static Func<LLmProviders, HttpClient>? CreateClient { get; set; }
+}
 }

@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 /// <summary>
 ///     Tool function call output
@@ -36,4 +37,5 @@ public sealed class ToolOutput
     /// </summary>
     [JsonProperty("output")]
     public string Output { get; }
+}
 }

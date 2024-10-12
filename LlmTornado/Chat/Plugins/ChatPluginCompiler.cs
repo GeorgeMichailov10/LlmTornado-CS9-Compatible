@@ -5,7 +5,8 @@ using LlmTornado.ChatFunctions;
 using LlmTornado.Code;
 using LlmTornado.Common;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginCompiler
 {
@@ -166,4 +167,5 @@ public class ChatPluginCompiler
 
         return new FunctionResult(fi.Name, callResult.Result, callResult.PostRenderData);
     }
+}
 }

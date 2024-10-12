@@ -1,7 +1,8 @@
 ﻿using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.FineTuning;
+namespace LlmTornado.FineTuning
+{
 
 public sealed class CreateFineTuneJobRequest
 {
@@ -23,4 +24,5 @@ public sealed class CreateFineTuneJobRequest
     [JsonProperty("suffix")] public string Suffix { get; set; }
 
     [JsonProperty("validation_file")] public string ValidationFileId { get; set; }
+}
 }

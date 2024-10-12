@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     Chat features supported only by Cohere.
@@ -134,4 +135,5 @@ public class ChatResponseVendorCohereExtensions
         SearchResults = response.SearchResults;
         Response = response;
     }
+}
 }

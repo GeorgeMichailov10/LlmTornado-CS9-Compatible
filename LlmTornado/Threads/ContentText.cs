@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class ContentText
 {
@@ -36,4 +37,5 @@ public sealed class ContentText
     {
         return Value;
     }
+}
 }

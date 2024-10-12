@@ -3,7 +3,8 @@ using LlmTornado.Code;
 using LlmTornado.Code.Models;
 using LlmTornado.Embedding.Models;
 
-namespace LlmTornado.Embedding.Models.OpenAi;
+namespace LlmTornado.Embedding.Models.OpenAi
+{
 
 /// <summary>
 /// Generation 3 embedding models from OpenAI.
@@ -47,4 +48,5 @@ public class EmbeddingModelOpenAiGen3 : IVendorModelClassProvider
     {
         
     }
+}
 }

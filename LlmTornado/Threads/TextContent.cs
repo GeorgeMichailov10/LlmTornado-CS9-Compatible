@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class TextContent
 {
@@ -20,4 +21,5 @@ public sealed class TextContent
     [JsonProperty("annotations")]
     [System.Text.Json.Serialization.JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public IReadOnlyList<Annotation> Annotations { get; private set; }
+}
 }

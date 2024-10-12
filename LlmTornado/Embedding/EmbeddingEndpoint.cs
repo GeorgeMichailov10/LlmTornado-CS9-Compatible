@@ -5,7 +5,8 @@ using LlmTornado.Code;
 using LlmTornado.Embedding.Models;
 using LlmTornado.Models;
 
-namespace LlmTornado.Embedding;
+namespace LlmTornado.Embedding
+{
 
 /// <summary>
 ///     Text embeddings measure the relatedness of text strings by generating an embedding, which is a vector
@@ -157,4 +158,5 @@ public class EmbeddingEndpoint : EndpointBase
 	    TornadoRequestContent requestBody = request.Serialize(provider);
         return await HttpPost1<EmbeddingResult>(provider, Endpoint, requestBody.Url, requestBody.Body);
     }
+}
 }

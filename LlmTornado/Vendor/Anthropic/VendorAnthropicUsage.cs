@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Vendor.Anthropic;
+namespace LlmTornado.Vendor.Anthropic
+{
 
 internal class VendorAnthropicUsage
 {
@@ -8,4 +9,5 @@ internal class VendorAnthropicUsage
     public int InputTokens { get; set; }
     [JsonProperty("output_tokens")]
     public int OutputTokens { get; set; }
+}
 }

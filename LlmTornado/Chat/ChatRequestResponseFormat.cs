@@ -1,7 +1,8 @@
 using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Represents requested type of response
@@ -125,4 +126,5 @@ public class ChatRequestResponseFormatTypes
             return new ChatRequestResponseFormatTypes(reader.ReadAsString());
         }
     }
+}
 }

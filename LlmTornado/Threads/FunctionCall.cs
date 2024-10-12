@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class FunctionCall
 {
@@ -25,4 +26,5 @@ public sealed class FunctionCall
     [JsonInclude]
     [JsonProperty("output")]
     public string Output { get; private set; }
+}
 }

@@ -4,7 +4,8 @@ using LlmTornado.ChatFunctions;
 using LlmTornado.Code;
 using LlmTornado.Common;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 /// Response blocks are of various types but generally a block represents a feature such as text, image, function call, etc.
@@ -103,4 +104,5 @@ public class ChatRichResponseBlock
     /// If the <see cref="Type"/> is <see cref="ChatRichResponseBlockTypes.Function"/>, this is the function the tool requested calling.
     /// </summary>
     public FunctionCall? FunctionCall { get; set; }
+}
 }

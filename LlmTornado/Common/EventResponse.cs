@@ -1,7 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public sealed class EventResponse
 {
@@ -28,4 +29,5 @@ public sealed class EventResponse
     [JsonProperty("level")] public string Level { get; private set; }
 
     [JsonProperty("message")] public string Message { get; private set; }
+}
 }

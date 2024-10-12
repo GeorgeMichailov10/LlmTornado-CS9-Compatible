@@ -1,4 +1,5 @@
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 [AttributeUsage(AttributeTargets.Field)]
 public class FlakyAttribute : Attribute
@@ -9,4 +10,5 @@ public class FlakyAttribute : Attribute
     {
         Reason = reason;
     }
+}
 }

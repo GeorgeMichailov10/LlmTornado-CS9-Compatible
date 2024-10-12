@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public interface IChatPluginFunctionType
 {
@@ -15,4 +16,5 @@ public enum ChatPluginCompileBackends
 {
     JsonSchema,
     Python
+}
 }

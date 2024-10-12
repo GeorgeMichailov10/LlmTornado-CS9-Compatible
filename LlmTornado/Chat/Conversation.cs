@@ -16,7 +16,8 @@ using LlmTornado.Vendor.Anthropic;
 using LlmTornado.Code.Models;
 using LlmTornado.Code.Vendor;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Represents on ongoing chat with back-and-forth interactions between the user and the chatbot.
@@ -1262,4 +1263,5 @@ public class Conversation
     }
 
     #endregion
+}
 }

@@ -8,7 +8,8 @@ using LlmTornado.Embedding.Models.OpenAi;
 using LlmTornado.Embedding.Models.Voyage;
 using LlmTornado.Models;
 
-namespace LlmTornado.Embedding.Models;
+namespace LlmTornado.Embedding.Models
+{
 
 /// <summary>
 /// Models supporting embeddings generation.
@@ -148,4 +149,5 @@ public class EmbeddingModel : ModelEmbeddingBase
     {
         return new EmbeddingModel(name ?? string.Empty, name is null ? LLmProviders.OpenAi : GetProvider(name) ?? LLmProviders.OpenAi);
     }
+}
 }

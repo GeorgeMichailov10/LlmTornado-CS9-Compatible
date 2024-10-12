@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class SerializedObject
 {
@@ -19,4 +20,5 @@ public class SerializedObject
     
     [JsonIgnore] 
     internal ChatPluginFunctionTypeObject? SourceObject { get; set; }
+}
 }

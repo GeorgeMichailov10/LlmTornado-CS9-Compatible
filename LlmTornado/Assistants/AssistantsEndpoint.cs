@@ -7,7 +7,8 @@ using LlmTornado.Common;
 using LlmTornado.Files;
 using LlmTornado;
 
-namespace LlmTornado.Assistants;
+namespace LlmTornado.Assistants
+{
 
 /// <summary>
 ///     Assistants are higher-level API than <see cref="ChatEndpoint" /> featuring automatic context management, code
@@ -169,4 +170,5 @@ public sealed class AssistantsEndpoint : EndpointBase
         HttpCallResult<DeletionStatus> status = await HttpAtomic<DeletionStatus>(Api.GetProvider(LLmProviders.OpenAi), CapabilityEndpoints.Assistants, HttpMethod.Delete, GetUrl(Api.GetProvider(LLmProviders.OpenAi), $"/{assistantId}/files/{file.Id}"), ct: cancellationToken).ConfigureAwait(ConfigureAwaitOptions.None);
         return new HttpCallResult<bool>(status.Code, status.Response, status.Data?.Deleted ?? false, status.Ok, null);
     }
+}
 }

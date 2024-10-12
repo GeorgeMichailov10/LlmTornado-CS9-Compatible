@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
-namespace LlmTornado.Audio;
+namespace LlmTornado.Audio
+{
 
 /// <summary>
 ///     Creates speech request object for tts.
@@ -38,4 +39,5 @@ public class SpeechRequest
     /// </summary>
     [JsonProperty("speed")]
     public float? Speed { get; set; } = 1;
+}
 }

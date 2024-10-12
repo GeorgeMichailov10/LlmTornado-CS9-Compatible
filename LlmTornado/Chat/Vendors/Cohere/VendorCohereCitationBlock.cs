@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     A block of text, either cited by one or more document or uncited.
@@ -14,4 +15,5 @@ public class VendorCohereCitationBlock
     ///     Citation reference.
     /// </summary>
     public VendorCohereChatCitation? Citation { get; set; }
+}
 }

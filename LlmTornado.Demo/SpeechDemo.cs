@@ -1,7 +1,8 @@
 using LlmTornado.Audio;
 using LlmTornado.Models;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class SpeechDemo
 {
@@ -19,4 +20,5 @@ public static class SpeechDemo
 
         int z = 0;
     }
+}
 }

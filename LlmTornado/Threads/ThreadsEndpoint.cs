@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using LlmTornado.Code;
 using LlmTornado.Common;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 /// <summary>
 ///     Create threads that assistants can interact with.<br />
@@ -342,4 +343,5 @@ public sealed class ThreadsEndpoint : EndpointBase
     }
 
     #endregion Runs*/
+}
 }

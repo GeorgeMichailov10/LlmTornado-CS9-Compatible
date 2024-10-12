@@ -15,7 +15,8 @@ using LlmTornado.Common;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 internal class VendorGoogleChatRequest
 {
@@ -512,3 +513,4 @@ internal class VendorGoogleChatRequest
         SafetySettings = VendorGoogleChatRequestSafetySetting.DisableAll;
     }
  }
+}

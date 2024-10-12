@@ -1,4 +1,5 @@
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 internal class General
 {
@@ -6,4 +7,5 @@ internal class General
     {
         return $"_{Nanoid.Generate("0123456789abcdefghijklmnopqrstuvwxzyABCDEFGHCIJKLMNOPQRSTUVWXYZ", 23)}";
     }
+}
 }

@@ -3,7 +3,8 @@ using LlmTornado.Code;
 using LlmTornado.Code.Models;
 using LlmTornado.Embedding.Models;
 
-namespace LlmTornado.Embedding.Models.Google;
+namespace LlmTornado.Embedding.Models.Google
+{
 
 /// <summary>
 /// Gemini embedding models from Google.
@@ -36,4 +37,5 @@ public class EmbeddingModelGoogleGemini : IVendorModelClassProvider
     {
         
     }
+}
 }

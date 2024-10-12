@@ -4,7 +4,8 @@ using LlmTornado.Common;
 using Newtonsoft.Json;
 using LlmTornado.Chat;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     An optional class to be used with models that support returning function calls.
@@ -38,4 +39,5 @@ public class ResolvedToolsCall
     ///     References all tools requested by the model.
     /// </summary>
     public ChatMessage AssistantMessage { get; set; }
+}
 }

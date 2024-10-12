@@ -1,7 +1,8 @@
 using System.Threading.Tasks;
 using LlmTornado.Code;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Given a prompt, the model will generate a new image.
@@ -31,4 +32,5 @@ public class ImageEditEndpoint : EndpointBase
     {
         return await HttpPost1<ImageResult>(Api.GetProvider(LLmProviders.OpenAi), Endpoint, postData: request);
     }
+}
 }

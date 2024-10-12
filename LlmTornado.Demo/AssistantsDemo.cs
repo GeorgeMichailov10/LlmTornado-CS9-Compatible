@@ -3,7 +3,8 @@ using LlmTornado.Common;
 using LlmTornado.Models;
 using File = LlmTornado.Files.File;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class AssistantsDemo
 {
@@ -134,4 +135,5 @@ public static class AssistantsDemo
 
         retrieveResult = await Program.Connect().Assistants.RetrieveFileAsync(assistant.Id, file.Id);
     }
+}
 }

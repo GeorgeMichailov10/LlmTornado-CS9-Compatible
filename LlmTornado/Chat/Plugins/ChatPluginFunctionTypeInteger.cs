@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginFunctionTypeInteger: ChatPluginFunctionTypeBase
 {
@@ -9,4 +10,5 @@ public class ChatPluginFunctionTypeInteger: ChatPluginFunctionTypeBase
         Description = description;
         Required = required;
     }
+}
 }

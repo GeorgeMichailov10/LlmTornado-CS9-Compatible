@@ -14,7 +14,8 @@ using LlmTornado.ChatFunctions;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Code.Vendor;
+namespace LlmTornado.Code.Vendor
+{
 
 /// <summary>
 /// 
@@ -155,4 +156,5 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
         
         return JsonConvert.DeserializeObject<T>(jsonData);
     }
+}
 }

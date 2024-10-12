@@ -8,7 +8,8 @@ using LlmTornado.Embedding.Models;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Embedding.Vendors.Cohere;
+namespace LlmTornado.Embedding.Vendors.Cohere
+{
 
 internal class VendorCohereEmbeddingResult : VendorEmbeddingResult
 {
@@ -57,4 +58,5 @@ internal class VendorCohereEmbeddingResult : VendorEmbeddingResult
         Result = result;
         return result;
     }
+}
 }

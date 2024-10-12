@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using Newtonsoft.Json;
 
-namespace LlmTornado.ChatFunctions;
+namespace LlmTornado.ChatFunctions
+{
 
 /// <summary>
 ///     Represents a function to be called.
@@ -167,4 +168,5 @@ public class OutboundToolChoice
             return serializer.Deserialize<OutboundToolCallFunction>(reader);
         }
     }
+}
 }

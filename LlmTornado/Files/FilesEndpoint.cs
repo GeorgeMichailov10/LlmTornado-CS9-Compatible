@@ -6,7 +6,8 @@ using LlmTornado.Code;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Files;
+namespace LlmTornado.Files
+{
 
 /// <summary>
 ///     The API endpoint for operations List, Upload, Delete, Retrieve files
@@ -98,4 +99,5 @@ public class FilesEndpoint : EndpointBase
 
         [JsonProperty("object")] public string Obj { get; set; }
     }
+}
 }

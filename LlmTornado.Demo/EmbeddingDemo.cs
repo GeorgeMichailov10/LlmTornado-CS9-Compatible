@@ -2,7 +2,8 @@ using LlmTornado.Embedding;
 using LlmTornado.Embedding.Models;
 using LlmTornado.Embedding.Vendors.Cohere;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class EmbeddingDemo
 {
@@ -85,4 +86,5 @@ public static class EmbeddingDemo
             Console.WriteLine("...");
         }
     }
+}
 }

@@ -2,7 +2,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 [Obsolete("use EventResponse")]
 public sealed class Event
@@ -29,4 +30,5 @@ public sealed class Event
     {
         return new EventResponse(@event);
     }
+}
 }

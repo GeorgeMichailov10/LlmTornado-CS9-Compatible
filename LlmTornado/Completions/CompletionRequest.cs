@@ -2,7 +2,8 @@
 using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Completions;
+namespace LlmTornado.Completions
+{
 
 /// <summary>
 ///     Represents a request to the Completions API.  Mostly matches the parameters in
@@ -281,4 +282,5 @@ public class CompletionRequest
 	/// </summary>
 	[JsonProperty("user")]
     public string user { get; set; }
+}
 }

@@ -4,7 +4,8 @@ using LlmTornado.Code.Models;
 using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado;
+namespace LlmTornado
+{
 
 
 /// <summary>
@@ -66,4 +67,5 @@ public class ApiResultBase
     /// </summary>
     [JsonIgnore]
     public IEndpointProvider? Provider { get; set; }
+}
 }

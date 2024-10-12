@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class CreateThreadAndRunRequest
 {
@@ -85,4 +86,5 @@ public sealed class CreateThreadAndRunRequest
     public IReadOnlyDictionary<string, string> Metadata { get; }
 
     [JsonProperty("thread")] public CreateThreadRequest ThreadRequest { get; }
+}
 }

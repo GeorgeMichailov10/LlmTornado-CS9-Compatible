@@ -4,7 +4,8 @@ using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 /// <summary>
 ///     A detailed list of steps the Assistant took as part of a Run.
@@ -164,4 +165,5 @@ public sealed class RunStepResponse
     {
         return Id;
     }
+}
 }

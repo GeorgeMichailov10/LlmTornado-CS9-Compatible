@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 /// <summary>
 ///     A conversation session between an Assistant and a user.
@@ -47,4 +48,5 @@ public sealed class ThreadResponse
     {
         return Id;
     }
+}
 }

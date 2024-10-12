@@ -5,7 +5,8 @@ using LlmTornado.Embedding.Models;
 using LlmTornado.Embedding.Vendors.Cohere;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Embedding.Vendors.OpenAi;
+namespace LlmTornado.Embedding.Vendors.OpenAi
+{
 
 internal class VendorCohereEmbeddingRequest
 {
@@ -84,4 +85,5 @@ internal class VendorCohereEmbeddingRequest
             }
         }
     }
+}
 }

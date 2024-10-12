@@ -1,7 +1,8 @@
 using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Files;
+namespace LlmTornado.Files
+{
 
 /// <summary>
 ///     Represents the retrieved purpose of a file
@@ -81,4 +82,5 @@ public class RetrievedFilePurpose
             return new RetrievedFilePurpose(reader.ReadAsString());
         }
     }
+}
 }

@@ -2,7 +2,8 @@
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Moderation;
+namespace LlmTornado.Moderation
+{
 
 /// <summary>
 ///     Represents a moderation result returned by the Moderations API
@@ -180,4 +181,5 @@ public class CategoryScores
 	/// </summary>
 	[JsonProperty("violence/graphic")]
     public double ViolenceGraphic { get; set; }
+}
 }

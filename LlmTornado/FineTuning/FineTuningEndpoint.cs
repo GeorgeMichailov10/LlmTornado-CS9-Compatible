@@ -13,7 +13,8 @@ namespace LlmTornado.FineTuning
         public FineTuningEndpoint(OpenAIClient client) : base(client) { }
 
         /// <inheritdoc />
-        protected override string Root => "fine_tuning";
+        protected override string Root => "fine_tuning"
+{
 
         /// <summary>
         /// Creates a job that fine-tunes a specified model from a given dataset.
@@ -128,3 +129,4 @@ namespace LlmTornado.FineTuning
         }
     }
 }*/
+}

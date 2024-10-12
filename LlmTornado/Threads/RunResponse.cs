@@ -4,7 +4,8 @@ using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 /// <summary>
 ///     An invocation of an Assistant on a Thread.
@@ -194,4 +195,5 @@ public sealed class RunResponse : BaseResponse
     {
         return Id;
     }
+}
 }

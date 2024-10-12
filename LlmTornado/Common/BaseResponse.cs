@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public abstract class BaseResponse
 {
@@ -9,4 +10,5 @@ public abstract class BaseResponse
     /// </summary>
     [JsonIgnore]
     public TornadoApi Api { get; internal set; }
+}
 }

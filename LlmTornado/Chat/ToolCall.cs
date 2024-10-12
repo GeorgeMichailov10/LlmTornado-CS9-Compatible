@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.ChatFunctions;
+namespace LlmTornado.ChatFunctions
+{
 
 /// <summary>
 ///     An optional class to be used with models that support returning function calls.
@@ -42,4 +43,5 @@ public class ToolCall
     {
         return JsonEncoded ??= JsonConvert.SerializeObject(this, EndpointBase.NullSettings);
     }
+}
 }

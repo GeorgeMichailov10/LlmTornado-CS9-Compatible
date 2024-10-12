@@ -13,7 +13,8 @@ using LlmTornado.Embedding;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Code.Vendor;
+namespace LlmTornado.Code.Vendor
+{
 
 /// <summary>
 /// 
@@ -459,4 +460,5 @@ internal class CohereEndpointProvider : BaseEndpointProvider, IEndpointProvider,
 
         return default;
     }
+}
 }

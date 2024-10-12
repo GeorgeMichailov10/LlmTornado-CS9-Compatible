@@ -2,7 +2,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 /// Used to select the safety instruction inserted into the prompt. Defaults to CONTEXTUAL. When NONE is specified, the safety instruction will be omitted.
@@ -26,4 +27,5 @@ public enum ChatVendorCohereExtensionSafetyMode
     /// </summary>
     [EnumMember(Value = "NONE")] 
     None
+}
 }

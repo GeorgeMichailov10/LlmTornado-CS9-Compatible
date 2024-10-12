@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents a request to the Images API.  Mostly matches the parameters in
@@ -81,4 +82,5 @@ public class ImageEditRequest
 	/// </summary>
 	[JsonProperty("user")]
     public string? User { get; set; }
+}
 }

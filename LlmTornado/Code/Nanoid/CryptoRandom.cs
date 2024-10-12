@@ -1,7 +1,8 @@
 using System;
 using System.Security.Cryptography;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 /*
  *  With minor modifications and removed shims for old .NET runtimes taken from
@@ -81,4 +82,5 @@ internal class CryptoRandom : Random
         ArgumentOutOfRangeException.ThrowIfNegative(maxValue);
         return Next(0, maxValue);
     }
+}
 }

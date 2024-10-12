@@ -4,7 +4,8 @@ using System.Threading.Tasks;
 using LlmTornado.Code;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Models;
+namespace LlmTornado.Models
+{
 
 /// <summary>
 ///     The API endpoint for querying available models
@@ -69,4 +70,5 @@ public class ModelsEndpoint : EndpointBase
 
         [JsonProperty("object")] public string obj { get; set; }
     }
+}
 }

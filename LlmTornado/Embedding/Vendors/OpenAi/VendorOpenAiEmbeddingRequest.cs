@@ -1,7 +1,8 @@
 using LlmTornado.Code;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Embedding.Vendors.OpenAi;
+namespace LlmTornado.Embedding.Vendors.OpenAi
+{
 
 internal class VendorOpenAiEmbeddingRequest
 {
@@ -38,4 +39,5 @@ internal class VendorOpenAiEmbeddingRequest
 
         Dimensions = request.Dimensions;
     }
+}
 }

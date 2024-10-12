@@ -1,7 +1,8 @@
 using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents available qualities for image generation endpoints, only supported by dalle3
@@ -55,4 +56,5 @@ public class ImageQuality
             return new ImageQuality(reader.ReadAsString());
         }
     }
+}
 }

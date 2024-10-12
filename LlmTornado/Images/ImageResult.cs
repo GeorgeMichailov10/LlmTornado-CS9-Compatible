@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents an image result returned by the Image API.
@@ -42,4 +43,5 @@ public class Data
 	/// </summary>
 	[JsonProperty("b64_json")]
     public string? Base64Data { get; set; }
+}
 }

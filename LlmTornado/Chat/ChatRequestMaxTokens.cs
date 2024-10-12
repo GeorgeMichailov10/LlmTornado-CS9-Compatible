@@ -5,7 +5,8 @@ using LlmTornado.Chat.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 /// Strategies for serializing <see cref="ChatRequest.MaxTokens"/> property, broken by OpenAI 9/24.
@@ -76,4 +77,5 @@ internal class PropertyRenameAndIgnoreSerializerContractResolver : DefaultContra
         newJsonPropertyName = null;
         return false;
     }
+}
 }

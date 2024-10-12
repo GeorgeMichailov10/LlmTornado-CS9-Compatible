@@ -4,7 +4,8 @@ using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.FineTuning;
+namespace LlmTornado.FineTuning
+{
 
 [Obsolete("Use ListResponse<EventResponse>")]
 public sealed class EventList
@@ -16,4 +17,5 @@ public sealed class EventList
     [JsonInclude]
     [JsonProperty("has_more")]
     public bool HasMore { get; private set; }
+}
 }

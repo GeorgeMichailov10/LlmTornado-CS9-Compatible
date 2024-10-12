@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public enum ChatFunctionCallResultParameterErrors
 {
@@ -6,4 +7,6 @@ public enum ChatFunctionCallResultParameterErrors
     RequiredParameterInvalidType,
     MalformedParam,
     Generic
+}
+
 }

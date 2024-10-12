@@ -6,7 +6,8 @@ using LlmTornado.Chat.Vendors.Anthropic;
 using LlmTornado.Chat.Vendors.Cohere;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Represents a result from calling the Chat API
@@ -169,4 +170,5 @@ public class ChatUsage : Usage
 		PromptTokens = usage.PromptTokenCount;
 		TotalTokens = CompletionTokens + PromptTokens;
 	}
+}
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Audio;
+namespace LlmTornado.Audio
+{
 
 /// <summary>
 ///     Represents available sizes for image generation endpoints
@@ -65,4 +66,5 @@ public class SpeechResponseFormat
             return new SpeechResponseFormat(reader.ReadAsString());
         }
     }
+}
 }

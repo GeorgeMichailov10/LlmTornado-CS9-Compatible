@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public sealed class Error
 {
@@ -18,4 +19,5 @@ public sealed class Error
     [JsonInclude]
     [JsonProperty("message")]
     public string Message { get; private set; }
+}
 }

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
-namespace LlmTornado;
+namespace LlmTornado
+{
 
 /// <summary>
 ///     Usage statistics of how many tokens have been used for this request.
@@ -18,4 +19,5 @@ public class Usage
 	/// </summary>
 	[JsonProperty("total_tokens")]
     public int TotalTokens { get; set; }
+}
 }

@@ -1,6 +1,7 @@
 using LlmTornado.Chat;
 
-namespace LlmTornado.Chat.Vendors.Anthropic;
+namespace LlmTornado.Chat.Vendors.Anthropic
+{
 
 internal class VendorAnthropicChatMessageTypes
 {
@@ -13,4 +14,5 @@ internal class VendorAnthropicChatMessageTypes
     ///     A special identifier used to return the resolved tool results back to the model along with tool_use_id and content.
     /// </summary>
     public const string ToolResult = "tool_result";
+}
 }

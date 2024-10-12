@@ -13,7 +13,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 public class Ref<T>
 {
@@ -342,4 +343,5 @@ public class TornadoRequestContent
     {
         
     }
+}
 }

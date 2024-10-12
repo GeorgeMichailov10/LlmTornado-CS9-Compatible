@@ -4,7 +4,8 @@ using LlmTornado.Common;
 using LlmTornado;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Assistants;
+namespace LlmTornado.Assistants
+{
 
 /// <summary>
 ///     Purpose-built AI that uses OpenAI's models and calls tools.
@@ -94,4 +95,5 @@ public sealed class AssistantResponse : ApiResultBase
     {
         return Id;
     }
+}
 }

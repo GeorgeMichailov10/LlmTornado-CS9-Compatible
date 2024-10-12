@@ -4,7 +4,8 @@ using System.Threading.Tasks;
 using LlmTornado.Code;
 using LlmTornado;
 
-namespace LlmTornado.Audio;
+namespace LlmTornado.Audio
+{
 
 public class SpeechTtsResult : ApiResultBase
 {
@@ -55,4 +56,5 @@ public class SpeechTtsResult : ApiResultBase
         await AudioStream.DisposeAsync();
         Response.Dispose();
     }
+}
 }

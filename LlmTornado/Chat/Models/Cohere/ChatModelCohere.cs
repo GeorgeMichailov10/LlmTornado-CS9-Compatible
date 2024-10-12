@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Known chat models from Cohere.
@@ -52,4 +53,5 @@ public class ChatModelCohere: BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

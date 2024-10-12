@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     Cohere citation.
@@ -37,4 +38,5 @@ public class VendorCohereChatCitation
     /// </summary>
     [JsonProperty("document_ids")]
     public List<string> DocumentIds { get; set; }
+}
 }

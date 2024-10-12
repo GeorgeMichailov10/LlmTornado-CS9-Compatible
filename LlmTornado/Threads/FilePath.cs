@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class FilePath
 {
@@ -11,4 +12,5 @@ public sealed class FilePath
     [JsonInclude]
     [JsonProperty("file_id")]
     public string FileId { get; private set; }
+}
 }

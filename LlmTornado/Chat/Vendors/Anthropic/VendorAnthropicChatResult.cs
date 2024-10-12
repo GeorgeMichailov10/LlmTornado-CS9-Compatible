@@ -7,7 +7,8 @@ using LlmTornado.Code;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Anthropic;
+namespace LlmTornado.Chat.Vendors.Anthropic
+{
 
 internal class VendorAnthropicChatResult : VendorChatResult
 {
@@ -144,4 +145,5 @@ internal class VendorAnthropicChatResult : VendorChatResult
             }
         };
     }
+}
 }

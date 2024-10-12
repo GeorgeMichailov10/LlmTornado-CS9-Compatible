@@ -9,7 +9,8 @@ using System.Reflection;
 using EnumsNET;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 internal static class Extensions
 {
@@ -144,4 +145,5 @@ internal static class Extensions
     {
         dict[key] = val;
     }
+}
 }

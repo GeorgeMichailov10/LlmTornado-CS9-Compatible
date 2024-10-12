@@ -2,7 +2,8 @@
 using LlmTornado.Code;
 using LlmTornado.Models;
 
-namespace LlmTornado.Moderation;
+namespace LlmTornado.Moderation
+{
 
 /// <summary>
 ///     This endpoint classifies text against the OpenAI Content Policy
@@ -49,4 +50,5 @@ public class ModerationEndpoint : EndpointBase
     {
         return await HttpPost1<ModerationResult>(Api.GetProvider(LLmProviders.OpenAi), Endpoint, postData: request);
     }
+}
 }

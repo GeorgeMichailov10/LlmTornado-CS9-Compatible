@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public sealed class ListQuery
 {
@@ -65,4 +66,5 @@ public sealed class ListQuery
 
         return parameters;
     }
+}
 }

@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class FileCitation
 {
@@ -18,4 +19,5 @@ public sealed class FileCitation
     [JsonInclude]
     [JsonProperty("quote")]
     public string Quote { get; private set; }
+}
 }

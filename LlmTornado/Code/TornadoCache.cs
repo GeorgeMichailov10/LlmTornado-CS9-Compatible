@@ -3,7 +3,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 internal static class TornadoCache
 {
@@ -33,4 +34,5 @@ internal static class TornadoCache
 
         return assignable;
     }
+}
 }

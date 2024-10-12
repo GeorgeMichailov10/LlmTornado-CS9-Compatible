@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 internal class VendorCohereChatTool
 {
@@ -60,4 +61,5 @@ internal class VendorCohereChatToolResultCallObject
     /// </summary>
     [JsonProperty("generation_id")]
     public string? GenerationId { get; set; }
+}
 }

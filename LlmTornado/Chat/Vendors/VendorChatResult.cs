@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Vendors;
+namespace LlmTornado.Chat.Vendors
+{
 
 /// <summary>
 ///     Base class shared between chat results from different vendors.
@@ -16,4 +17,5 @@ internal abstract class VendorChatResult : IVendorChatResult
 internal interface IVendorChatResult
 {
     public ChatResult ToChatResult(string? postData);
+}
 }

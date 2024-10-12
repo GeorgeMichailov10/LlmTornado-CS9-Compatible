@@ -12,7 +12,8 @@ using Newtonsoft.Json;
 using LlmTornado.Chat;
 using LlmTornado.Vendor.Anthropic;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 /// <summary>
 /// Shared base used by built-in providers. Custom providers can either inherit this and override the required methods or implement <see cref="IEndpointProvider"/> directly.
@@ -60,4 +61,5 @@ public abstract class BaseEndpointProvider : IEndpointProviderExtended
     {
         return StreamTypes.GetValueOrDefault(t, StreamRequestTypes.Unknown);
     }
+}
 }

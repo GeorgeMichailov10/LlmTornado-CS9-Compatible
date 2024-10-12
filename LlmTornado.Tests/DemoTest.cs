@@ -2,7 +2,8 @@ using LlmTornado.Chat.Models;
 using LlmTornado.Code.Models;
 using LlmTornado.Demo;
 
-namespace LlmTornado.Tests;
+namespace LlmTornado.Tests
+{
 
 public class Tests
 {
@@ -71,4 +72,5 @@ public class Tests
             Assert.Fail(e.Message);
         }
     }
+}
 }

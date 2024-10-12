@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class RequiredAction
 {
@@ -13,4 +14,5 @@ public sealed class RequiredAction
     [JsonInclude]
     [JsonProperty("submit_tool_outputs")]
     public SubmitToolOutputs SubmitToolOutputs { get; private set; }
+}
 }

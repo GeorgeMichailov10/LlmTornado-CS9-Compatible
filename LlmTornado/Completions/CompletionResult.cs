@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Completions;
+namespace LlmTornado.Completions
+{
 
 /// <summary>
 ///     Represents a completion choice returned by the Completion API.
@@ -97,4 +98,5 @@ public class Logprobs
     [JsonProperty("top_logprobs")] public IList<IDictionary<string, double>> TopLogprobs { get; set; }
 
     [JsonProperty("text_offset")] public List<int> TextOffsets { get; set; }
+}
 }

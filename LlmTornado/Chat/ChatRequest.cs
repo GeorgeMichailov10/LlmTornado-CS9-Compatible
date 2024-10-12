@@ -15,7 +15,8 @@ using LlmTornado.Chat.Vendors.Anthropic;
 using LlmTornado.Chat.Vendors.Cohere;
 using LlmTornado.Vendor.Anthropic;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     A request to the Chat API. This is similar, but not exactly the same as the
@@ -519,4 +520,5 @@ public class ChatRequest
             return existingValue;
         }
     }
+}
 }

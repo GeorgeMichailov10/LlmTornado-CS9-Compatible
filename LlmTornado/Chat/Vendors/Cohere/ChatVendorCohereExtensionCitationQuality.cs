@@ -2,7 +2,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want "accurate" results, "fast" results or no results.
@@ -25,4 +26,5 @@ public enum ChatVendorCohereExtensionCitationQuality
     /// </summary>
     [EnumMember(Value = "off")] 
     Off
+}
 }

@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Vendor.Anthropic;
+namespace LlmTornado.Vendor.Anthropic
+{
 
 internal class VendorCohereUsage
 {
@@ -26,4 +27,5 @@ internal class VendorCohereUsage
     public VendorCohereUsageTokens? Tokens { get; set; }
     [JsonProperty("response_type")]
     public string? ResponseType { get; set; }
+}
 }

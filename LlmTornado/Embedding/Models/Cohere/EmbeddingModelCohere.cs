@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Chat.Models;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Embedding.Models.Cohere;
+namespace LlmTornado.Embedding.Models.Cohere
+{
 
 /// <summary>
 /// Known embedding models from Cohere.
@@ -59,4 +60,5 @@ public class EmbeddingModelCohere : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

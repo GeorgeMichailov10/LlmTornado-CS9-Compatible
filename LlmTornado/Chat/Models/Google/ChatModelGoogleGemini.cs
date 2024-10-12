@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Gemini class models from Google.
@@ -47,4 +48,5 @@ public class ChatModelGoogleGemini : IVendorModelClassProvider
     {
 
     }
+}
 }

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Claude 3 class models from Anthropic.
@@ -36,4 +37,5 @@ public class ChatModelAnthropicClaude35 : IVendorModelClassProvider
     {
 
     }
+}
 }

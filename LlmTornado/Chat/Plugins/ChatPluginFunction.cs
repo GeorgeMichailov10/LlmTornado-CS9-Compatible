@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginFunction
 {
@@ -66,4 +67,6 @@ public class ChatPluginFunction
         Params = pars;
         SyncCallHandler = callHandler;
     }
+}
+
 }

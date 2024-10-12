@@ -3,7 +3,8 @@ using System.Linq;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class CreateRunRequest
 {
@@ -52,4 +53,5 @@ public sealed class CreateRunRequest
     /// </summary>
     [JsonProperty("metadata")]
     public IReadOnlyDictionary<string, string> Metadata { get; }
+}
 }

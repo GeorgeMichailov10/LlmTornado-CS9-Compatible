@@ -1,7 +1,8 @@
 using LlmTornado.Common;
 using LlmTornado.Threads;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class ThreadsDemo
 {
@@ -49,4 +50,5 @@ public static class ThreadsDemo
         HttpCallResult<MessageResponse> msg = await Program.Connect().Threads.CreateMessageAsync(response.Id, new CreateMessageRequest("my message"));
         await Delete(response);
     }
+}
 }

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Chat.Models;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Embedding.Models.Voyage;
+namespace LlmTornado.Embedding.Models.Voyage
+{
 
 /// <summary>
 /// Known embedding models from Voyage.
@@ -53,4 +54,5 @@ public class EmbeddingModelVoyage : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

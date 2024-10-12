@@ -1,7 +1,8 @@
 using System;
 using System.Threading.Tasks;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 /*
  *  With minor modifications and removed shims for old .NET runtimes taken from
@@ -252,4 +253,5 @@ internal static class Nanoid
             }
         }
     }
+}
 }

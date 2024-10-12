@@ -5,7 +5,8 @@ using LlmTornado.Audio;
 using LlmTornado.Code;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     Represents Cohere Connector.
@@ -146,4 +147,5 @@ public class ChatVendorCohereExtensionConnector
             return new ChatVendorCohereExtensionConnector(reader.ReadAsString());
         }
     }
+}
 }

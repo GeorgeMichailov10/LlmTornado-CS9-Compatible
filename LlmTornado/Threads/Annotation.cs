@@ -1,7 +1,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class Annotation
 {
@@ -34,4 +35,5 @@ public sealed class Annotation
 
     [JsonProperty("end_index")] 
     public int EndIndex { get; private set; }
+}
 }

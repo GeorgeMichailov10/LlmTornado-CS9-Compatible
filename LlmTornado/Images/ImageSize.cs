@@ -1,7 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents available sizes for image generation endpoints
@@ -70,4 +71,5 @@ public class ImageSize
             return new ImageSize(reader.ReadAsString());
         }
     }
+}
 }

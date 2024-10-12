@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class ToolCall
 {
@@ -40,4 +41,5 @@ public sealed class ToolCall
     [JsonInclude]
     [JsonProperty("retrieval")]
     public object Retrieval { get; private set; }
+}
 }

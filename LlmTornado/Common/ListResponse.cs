@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public sealed class ListResponse<T> : ApiResultBase, IListResponse<T>
 {
@@ -14,4 +15,5 @@ public sealed class ListResponse<T> : ApiResultBase, IListResponse<T>
     [JsonProperty("last_id")] public string LastId { get; private set; }
 
     [JsonProperty("data")] public IReadOnlyList<T> Items { get; private set; } = [];
+}
 }

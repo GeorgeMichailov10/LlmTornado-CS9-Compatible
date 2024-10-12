@@ -1,7 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Represents available message types.
@@ -20,4 +21,5 @@ public enum ChatMessageTypes
     /// Message part is an audio fragment.
     /// </summary>
     Audio
+}
 }

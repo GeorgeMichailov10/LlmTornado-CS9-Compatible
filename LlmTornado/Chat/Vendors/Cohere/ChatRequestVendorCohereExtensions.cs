@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     Chat features supported only by Cohere.
@@ -60,4 +61,5 @@ public class ChatRequestVendorCohereExtensions
     {
         Connectors = connectors;
     }
+}
 }

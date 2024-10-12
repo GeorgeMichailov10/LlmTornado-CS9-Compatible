@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public abstract class ChatPluginFunctionTypeBase : IChatPluginFunctionType
 {
@@ -10,4 +11,5 @@ public abstract class ChatPluginFunctionTypeBase : IChatPluginFunctionType
     {
         return new { type = Type, description = Description };
     }
+}
 }

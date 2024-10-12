@@ -11,7 +11,8 @@ using LlmTornado.Chat;
 using LlmTornado.ChatFunctions;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Code.Vendor;
+namespace LlmTornado.Code.Vendor
+{
 
 /// <summary>
 /// 
@@ -357,4 +358,5 @@ internal class OpenAiEndpointProvider : BaseEndpointProvider, IEndpointProvider,
             yield return res;
         }
     }
+}
 }

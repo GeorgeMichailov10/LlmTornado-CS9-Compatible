@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     The connector from which information was fetched.
@@ -12,4 +13,5 @@ public class VendorCohereChatSearchQueryConnector
     /// </summary>
     [JsonProperty("id")]
     public string Id { get; set; }
+}
 }

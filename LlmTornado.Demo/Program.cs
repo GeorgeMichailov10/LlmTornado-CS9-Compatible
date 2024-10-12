@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
 using LlmTornado.Code;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
     
 public enum Demos
@@ -240,4 +241,5 @@ public class Program
 
         Console.ReadKey();
     }
+}
 }

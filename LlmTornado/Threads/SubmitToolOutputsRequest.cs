@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class SubmitToolOutputsRequest
 {
@@ -34,4 +35,5 @@ public sealed class SubmitToolOutputsRequest
     {
         return new SubmitToolOutputsRequest(toolOutput);
     }
+}
 }

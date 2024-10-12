@@ -1,4 +1,5 @@
-namespace LlmTornado.Embedding.Vendors.Cohere;
+namespace LlmTornado.Embedding.Vendors.Cohere
+{
 
 /// <summary>
 /// Embedding features supported only by Cohere.
@@ -58,4 +59,5 @@ public enum EmbeddingVendorCohereExtensionTruncation
     /// Input is trimmed from the end to fit the context size.
     /// </summary>
     End
+}
 }

@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatFunctionParam
 {
@@ -51,4 +52,5 @@ public class ChatFunctionParam
             _ => new ChatPluginFunctionTypeError(name, true)
         };
     }
+}
 }

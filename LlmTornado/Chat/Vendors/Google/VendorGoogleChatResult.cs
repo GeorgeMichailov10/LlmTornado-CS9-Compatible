@@ -6,7 +6,8 @@ using LlmTornado.ChatFunctions;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 internal class VendorGoogleChatResult : VendorChatResult
 {
@@ -54,4 +55,5 @@ internal class VendorGoogleChatResult : VendorChatResult
         
         return result;
     }
+}
 }

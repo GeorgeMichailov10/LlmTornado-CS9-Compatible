@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Configuration of the stream.
@@ -23,4 +24,5 @@ public class ChatStreamOptions
     {
         IncludeUsage = true
     };
+}
 }

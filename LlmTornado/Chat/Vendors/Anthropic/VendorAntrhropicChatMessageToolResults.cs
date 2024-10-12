@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace LlmTornado.Chat.Vendors.Anthropic;
+namespace LlmTornado.Chat.Vendors.Anthropic
+{
 
 internal class VendorAnthropicChatMessageToolResults
 {
@@ -31,4 +32,5 @@ internal class VendorAnthropicChatMessageToolResult
         ToolCallId = msg.ToolCallId;
         ToolInvocationSucceeded = msg.ToolInvocationSucceeded;
     }
+}
 }

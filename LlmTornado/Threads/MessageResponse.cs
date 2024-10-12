@@ -5,7 +5,8 @@ using LlmTornado.Chat;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 /// <summary>
 ///     A message created by an Assistant or a user.
@@ -101,4 +102,5 @@ public sealed class MessageResponse : BaseResponse
     {
         return string.Join("\n", Content.Select(content => content?.ToString()));
     }
+}
 }

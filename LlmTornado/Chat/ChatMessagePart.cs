@@ -3,7 +3,8 @@ using LlmTornado.Code;
 using LlmTornado.Images;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Represents a message part
@@ -101,4 +102,5 @@ public class ChatMessagePart
     /// </summary>
     [JsonProperty("image_url")]
     public ChatImage? Image { get; set; }
+}
 }

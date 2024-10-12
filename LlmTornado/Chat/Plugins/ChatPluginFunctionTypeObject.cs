@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using LlmTornado.Code;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginFunctionTypeObject : ChatPluginFunctionTypeBase
 {
@@ -38,4 +39,6 @@ public class ChatPluginFunctionTypeObject : ChatPluginFunctionTypeBase
 
         return so;
     }
+}
+
 }

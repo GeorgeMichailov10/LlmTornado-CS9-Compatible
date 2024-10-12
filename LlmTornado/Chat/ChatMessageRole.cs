@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Represents the Role of a <see cref="ChatMessage" />.  Typically, a conversation is formatted with a system message
@@ -161,4 +162,5 @@ public class ChatMessageRole : IEquatable<ChatMessageRole>
             return new ChatMessageRole(reader.ReadAsString());
         }
     }
+}
 }

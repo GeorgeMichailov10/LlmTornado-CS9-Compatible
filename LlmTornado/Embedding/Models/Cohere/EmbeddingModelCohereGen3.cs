@@ -5,7 +5,8 @@ using LlmTornado.Code;
 using LlmTornado.Code.Models;
 using LlmTornado.Embedding.Models.OpenAi;
 
-namespace LlmTornado.Embedding.Models.Cohere;
+namespace LlmTornado.Embedding.Models.Cohere
+{
 
 /// <summary>
 /// Generation 3 embedding models from Cohere.
@@ -94,4 +95,5 @@ public class EmbeddingModelCohereGen3 : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

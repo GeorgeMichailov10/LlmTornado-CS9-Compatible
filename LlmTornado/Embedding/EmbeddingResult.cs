@@ -8,7 +8,8 @@ using LlmTornado.Embedding.Vendors.Cohere;
 using LlmTornado.Vendor.Anthropic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Embedding;
+namespace LlmTornado.Embedding
+{
 
 /// <summary>
 ///     Represents an embedding result returned by the Embedding API.
@@ -83,4 +84,5 @@ public class EmbeddingEntry
 	/// </summary>
 	[JsonProperty("index")]
     public int Index { get; set; }
+}
 }

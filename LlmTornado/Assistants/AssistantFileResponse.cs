@@ -1,7 +1,8 @@
 using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Assistants;
+namespace LlmTornado.Assistants
+{
 
 /// <summary>
 ///     File attached to an assistant.
@@ -44,4 +45,5 @@ public sealed class AssistantFileResponse
     {
         return Id;
     }
+}
 }

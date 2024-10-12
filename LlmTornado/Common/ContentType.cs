@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace LlmTornado;
+namespace LlmTornado
+{
 
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ContentType
@@ -14,4 +15,5 @@ public enum ContentType
     ImageUrl,
     [EnumMember(Value = "image_file")] 
     ImageFile
+}
 }

@@ -2,7 +2,8 @@ using LlmTornado.Common;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace LlmTornado.Vendor.Anthropic;
+namespace LlmTornado.Vendor.Anthropic
+{
 
 /// <summary>
 /// 
@@ -38,4 +39,5 @@ internal class VendorAnthropicToolFunction
     /// </summary>
     [JsonProperty("input_schema")]
     public JObject? Parameters { get; set; }
+}
 }

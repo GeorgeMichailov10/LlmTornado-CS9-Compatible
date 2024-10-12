@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using LlmTornado.Code;
 using LlmTornado;
 
-namespace LlmTornado.Audio;
+namespace LlmTornado.Audio
+{
 
 /// <summary>
 ///     You can use this endpoint for audio transcription or translation.
@@ -82,4 +83,5 @@ public class AudioEndpoint : EndpointBase
 
         return HttpPost1<TranscriptionVerboseJsonResult>(Api.GetProvider(LLmProviders.OpenAi), Endpoint, url, content);
     }
+}
 }

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Mistral models hosted by Groq.
@@ -39,4 +40,5 @@ public class ChatModelGroqMistral : IVendorModelClassProvider
 
     }
 
+}
 }

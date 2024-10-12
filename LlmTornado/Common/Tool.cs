@@ -3,7 +3,8 @@ using LlmTornado.ChatFunctions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 /// <summary>
 ///     Represents a function call result
@@ -322,4 +323,5 @@ public class ToolFunction
     private ToolFunction()
     {
     }
+}
 }

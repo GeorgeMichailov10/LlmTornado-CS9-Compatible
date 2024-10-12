@@ -4,7 +4,8 @@ using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.FineTuning;
+namespace LlmTornado.FineTuning
+{
 
 [Obsolete("use FineTuneJobResponse")]
 public sealed class FineTuneJob
@@ -90,4 +91,5 @@ public sealed class FineTuneJob
     {
         return Id;
     }
+}
 }

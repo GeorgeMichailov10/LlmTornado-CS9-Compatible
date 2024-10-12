@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.FineTuning;
+namespace LlmTornado.FineTuning
+{
 
 [Obsolete("Use ListResponse<FineTuneJobResponse>")]
 public sealed class FineTuneJobList
@@ -15,4 +16,5 @@ public sealed class FineTuneJobList
     [JsonInclude]
     [JsonProperty("has_more")]
     public bool HasMore { get; private set; }
+}
 }

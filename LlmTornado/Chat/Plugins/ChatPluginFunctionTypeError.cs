@@ -1,6 +1,7 @@
 using System;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginFunctionTypeError : ChatPluginFunctionTypeBase
 {
@@ -16,4 +17,5 @@ public class ChatPluginFunctionTypeError : ChatPluginFunctionTypeBase
     {
         throw new Exception("Error type can't be compiled");
     }
+}
 }

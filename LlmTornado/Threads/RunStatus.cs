@@ -1,6 +1,7 @@
 using System.Runtime.Serialization;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public enum RunStatus
 {
@@ -14,4 +15,5 @@ public enum RunStatus
     [EnumMember(Value = "failed")] Failed,
     [EnumMember(Value = "completed")] Completed,
     [EnumMember(Value = "expired")] Expired
+}
 }

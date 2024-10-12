@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// GPT-4 class models from OpenAI.
@@ -255,4 +256,5 @@ public class ChatModelOpenAiGpt4 : IVendorModelClassProvider
     {
         
     }
+}
 }

@@ -3,7 +3,8 @@ using System.Linq;
 using LlmTornado.Chat;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class CreateMessageRequest
 {
@@ -56,4 +57,5 @@ public sealed class CreateMessageRequest
     {
         return new CreateMessageRequest(content);
     }
+}
 }

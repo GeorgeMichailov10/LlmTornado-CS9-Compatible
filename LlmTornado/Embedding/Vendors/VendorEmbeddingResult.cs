@@ -1,4 +1,5 @@
-namespace LlmTornado.Embedding.Vendors;
+namespace LlmTornado.Embedding.Vendors
+{
 
 /// <summary>
 ///     Base class shared between chat results from different vendors.
@@ -16,4 +17,5 @@ internal abstract class VendorEmbeddingResult : IVendorEmbeddingResult
 internal interface IVendorEmbeddingResult
 {
     public EmbeddingResult ToResult(string? postData);
+}
 }

@@ -2,7 +2,8 @@ using LlmTornado.Common;
 using LlmTornado.Files;
 using File = LlmTornado.Files.File;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class FilesDemo
 {
@@ -12,4 +13,5 @@ public static class FilesDemo
         File? retrievedFile = await Program.Connect().Files.GetFileAsync(uploadedFile.Data?.Id);
         return uploadedFile.Data;
     }
+}
 }

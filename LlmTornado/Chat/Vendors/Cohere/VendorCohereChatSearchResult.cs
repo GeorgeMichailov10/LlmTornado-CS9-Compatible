@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     RAG search result.
@@ -37,4 +38,5 @@ public class VendorCohereChatSearchResult
     /// </summary>
     [JsonProperty("continue_on_failure")]
     public bool ContinueOnFailure { get; set; }
+}
 }

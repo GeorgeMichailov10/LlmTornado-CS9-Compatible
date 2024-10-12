@@ -8,7 +8,8 @@ using LlmTornado.Code.Models;
 using LlmTornado.Code.Vendor;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Models;
+namespace LlmTornado.Models
+{
 
 /// <summary>
 ///     Represents a language model
@@ -399,4 +400,5 @@ public class Permissions
 
     [JsonProperty("is_blocking")] 
     public bool IsBlocking { get; set; }
+}
 }

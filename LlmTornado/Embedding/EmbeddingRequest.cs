@@ -8,7 +8,8 @@ using LlmTornado.Embedding.Vendors.OpenAi;
 using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Embedding;
+namespace LlmTornado.Embedding
+{
 
 /// <summary>
 ///     Represents a request to the Embeddings API.
@@ -214,4 +215,5 @@ public class EmbeddingRequest
 			return existingValue;
 		}
 	}
+}
 }

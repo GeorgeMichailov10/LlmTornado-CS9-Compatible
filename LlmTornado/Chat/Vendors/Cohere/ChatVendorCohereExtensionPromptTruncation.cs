@@ -2,7 +2,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 /// Dictates how the prompt will be constructed.
@@ -25,4 +26,5 @@ public enum ChatVendorCohereExtensionPromptTruncation
     /// </summary>
     [EnumMember(Value = "AUTO_PRESERVE_ORDER")] 
     AutoPreserveOrder
+}
 }

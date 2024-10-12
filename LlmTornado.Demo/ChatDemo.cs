@@ -9,7 +9,8 @@ using LlmTornado.Code;
 using LlmTornado.Code.Models;
 using LlmTornado.Common;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class ChatDemo
 {
@@ -997,4 +998,5 @@ public static class ChatDemo
         string response = sb.ToString();
         return response;
     }
+}
 }

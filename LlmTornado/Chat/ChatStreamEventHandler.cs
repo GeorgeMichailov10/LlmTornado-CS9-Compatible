@@ -5,7 +5,8 @@ using LlmTornado.ChatFunctions;
 using LlmTornado.Code;
 using LlmTornado.Common;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Enables subscribing to various streaming events.
@@ -62,4 +63,5 @@ public class ChatStreamEventHandler
     ///     The ID of the message that will be appended to the conversation, if null a random GUID is used.
     /// </summary>
     public Guid? MessageId { get; set; }
+}
 }

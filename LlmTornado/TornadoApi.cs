@@ -18,7 +18,8 @@ using LlmTornado.Models;
 using LlmTornado.Moderation;
 using LlmTornado.Threads;
 
-namespace LlmTornado;
+namespace LlmTornado
+{
 
 /// <summary>
 ///     Entry point to the OpenAPI API, handling auth and allowing access to the various API endpoints
@@ -216,4 +217,5 @@ public class TornadoApi
     ///     image.
     /// </summary>
     public ImageGenerationEndpoint ImageGenerations => imageGeneration.Value;
+}
 }

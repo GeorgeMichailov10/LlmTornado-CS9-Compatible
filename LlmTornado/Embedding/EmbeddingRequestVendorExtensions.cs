@@ -1,6 +1,7 @@
 using LlmTornado.Embedding.Vendors.Cohere;
 
-namespace LlmTornado.Embedding;
+namespace LlmTornado.Embedding
+{
 
 /// <summary>
 ///		Embedding features supported only by a single/few providers with no shared equivalent.
@@ -19,4 +20,5 @@ public class EmbeddingRequestVendorExtensions
     {
         
     }
+}
 }

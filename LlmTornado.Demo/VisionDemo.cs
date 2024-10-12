@@ -5,7 +5,8 @@ using LlmTornado.Code.Models;
 using LlmTornado.Images;
 using LlmTornado.Models;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public static class VisionDemo
 {
@@ -37,4 +38,5 @@ public static class VisionDemo
 
         Console.WriteLine(result?.Choices?[0].Message?.Content);
     }
+}
 }

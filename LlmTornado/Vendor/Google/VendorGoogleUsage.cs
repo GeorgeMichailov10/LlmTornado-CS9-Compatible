@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
-namespace LlmTornado.Vendor.Anthropic;
+namespace LlmTornado.Vendor.Anthropic
+{
 
 internal class VendorGoogleUsage
 {
@@ -10,4 +11,5 @@ internal class VendorGoogleUsage
     public int CandidatesTokenCount { get; set; }
     [JsonProperty("totalTokenCount")]
     public int TotalTokenCount { get; set; }
+}
 }

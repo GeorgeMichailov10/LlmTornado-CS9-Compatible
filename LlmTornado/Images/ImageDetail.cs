@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents available response formats for image generation endpoints
@@ -24,4 +25,5 @@ public enum ImageDetail
     /// </summary>
     [EnumMember(Value = "low")] 
     Low
+}
 }

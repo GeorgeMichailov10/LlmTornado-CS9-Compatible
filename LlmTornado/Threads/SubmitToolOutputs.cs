@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class SubmitToolOutputs
 {
@@ -12,4 +13,5 @@ public sealed class SubmitToolOutputs
     [JsonInclude]
     [JsonProperty("tool_calls")]
     public IReadOnlyList<ToolCall> ToolCalls { get; private set; }
+}
 }

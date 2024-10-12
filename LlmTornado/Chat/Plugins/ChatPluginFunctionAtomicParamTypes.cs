@@ -1,4 +1,5 @@
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public enum ChatPluginFunctionAtomicParamTypes
 {
@@ -6,4 +7,5 @@ public enum ChatPluginFunctionAtomicParamTypes
     Int,
     Float,
     Bool
+}
 }

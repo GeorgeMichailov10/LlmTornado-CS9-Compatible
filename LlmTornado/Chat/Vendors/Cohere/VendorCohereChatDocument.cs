@@ -1,7 +1,8 @@
 using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     Represents a document used by a model in its response.
@@ -37,4 +38,5 @@ public class VendorCohereChatDocument
     /// </summary>
     [JsonProperty("url")]
     public string? Url { get; set; }
+}
 }

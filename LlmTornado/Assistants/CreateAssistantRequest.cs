@@ -4,7 +4,8 @@ using LlmTornado.Common;
 using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Assistants;
+namespace LlmTornado.Assistants
+{
 
 /// <summary>
 ///     A request to create an assistant
@@ -150,4 +151,5 @@ public sealed class CreateAssistantRequest
     /// </summary>
     [JsonProperty("metadata")]
     public IReadOnlyDictionary<string, string>? Metadata { get; }
+}
 }

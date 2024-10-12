@@ -1,6 +1,7 @@
 ﻿using System.IO;
 
-namespace LlmTornado.Audio;
+namespace LlmTornado.Audio
+{
 
 /// <summary>
 ///     Audio file object for transcript and translate requests.
@@ -26,4 +27,5 @@ public class AudioFile
     ///     Full name of the file. such as test.mp3
     /// </summary>
     public string Name { get; set; }
+}
 }

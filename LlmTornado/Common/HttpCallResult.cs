@@ -5,7 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 /// <summary>
 /// REST call result.
@@ -93,4 +94,5 @@ public class HttpCallResult<T> : IHttpCallResult
     ///     Network exception.
     /// </summary>
     public Exception? Exception { get; set; }
+}
 }

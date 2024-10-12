@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using LlmTornado.Chat.Models;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Embedding.Models.Google;
+namespace LlmTornado.Embedding.Models.Google
+{
 
 /// <summary>
 /// Known embedding models from Google.
@@ -53,4 +54,5 @@ public class EmbeddingModelGoogle : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

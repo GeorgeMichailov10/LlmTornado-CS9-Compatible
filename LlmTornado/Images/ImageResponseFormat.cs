@@ -1,7 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents available response formats for image generation endpoints
@@ -56,4 +57,5 @@ public class ImageResponseFormat
             writer.WriteValue(value.ToString());
         }
     }
+}
 }

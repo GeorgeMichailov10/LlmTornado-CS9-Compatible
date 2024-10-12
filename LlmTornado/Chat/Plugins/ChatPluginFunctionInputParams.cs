@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using LlmTornado.Code;
 using Newtonsoft.Json.Linq;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginFunctionInputParams
 {
@@ -53,4 +54,5 @@ public class ChatPluginFunctionInputParams
             return false;
         }
     }
+}
 }

@@ -1,6 +1,7 @@
 using LlmTornado.Code.Vendor;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 internal static class EndpointProviderConverter
 {
@@ -19,4 +20,5 @@ internal static class EndpointProviderConverter
             _ => new OpenAiEndpointProvider(api)
         };
     }
+}
 }

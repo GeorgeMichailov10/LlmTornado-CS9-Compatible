@@ -3,7 +3,8 @@ using LlmTornado.Code;
 using LlmTornado.Code.Models;
 using LlmTornado.Embedding.Models;
 
-namespace LlmTornado.Embedding.Models.Voyage;
+namespace LlmTornado.Embedding.Models.Voyage
+{
 
 /// <summary>
 /// Voyage 2 embedding models from Voyage.
@@ -92,4 +93,5 @@ public class EmbeddingModelVoyageGen2 : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

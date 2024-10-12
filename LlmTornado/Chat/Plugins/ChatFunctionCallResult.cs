@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using LlmTornado.Code;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatFunctionCallResult
 {
@@ -90,4 +91,5 @@ public class ChatFunctionCallResult
             message = Error
         };
     }
+}
 }

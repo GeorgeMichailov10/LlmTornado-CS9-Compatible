@@ -5,7 +5,8 @@ using System.Net;
 using System.Net.Http;
 using LlmTornado.Chat;
 
-namespace LlmTornado.Code;
+namespace LlmTornado.Code
+{
 
 /// <summary>
 /// 
@@ -41,4 +42,5 @@ public interface IEndpointProvider
 public interface IEndpointProviderExtended
 {
     public static abstract Version OutboundVersion { get; set; }
+}
 }

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
-namespace LlmTornado.Files;
+namespace LlmTornado.Files
+{
 
 /// <summary>
 ///     Represents a single file used with the OpenAI Files endpoint.  Files are used to upload and manage documents that
@@ -62,4 +63,5 @@ public class File : ApiResultBase
 	/// </summary>
 	[JsonProperty("status_details")]
     public string? StatusDetails { get; set; }
+}
 }

@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public sealed class ImageFile
 {
@@ -11,4 +12,5 @@ public sealed class ImageFile
     [JsonInclude]
     [JsonProperty("file_id")]
     public string? FileId { get; private set; }
+}
 }

@@ -1,7 +1,8 @@
 using LlmTornado.Images;
 using LlmTornado.Models;
 
-namespace LlmTornado.Demo;
+namespace LlmTornado.Demo
+{
 
 public class ImagesDemo
 {
@@ -9,4 +10,5 @@ public class ImagesDemo
     {
         ImageResult? generatedImg = await Program.Connect().ImageGenerations.CreateImageAsync(new ImageGenerationRequest("a cute cat", quality: ImageQuality.Hd, responseFormat: ImageResponseFormat.Url, model: Model.Dalle3));
     }
+}
 }

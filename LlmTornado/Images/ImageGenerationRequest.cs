@@ -1,7 +1,8 @@
 ﻿using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Images;
+namespace LlmTornado.Images
+{
 
 /// <summary>
 ///     Represents a request to the Images API.  Mostly matches the parameters in
@@ -94,4 +95,5 @@ public class ImageGenerationRequest
 	[JsonProperty("style")]
     [JsonConverter(typeof(ImageStyles.ImageStyleJsonConverter))]
     public ImageStyles? Style { get; set; }
+}
 }

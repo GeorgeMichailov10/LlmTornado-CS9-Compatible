@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
-namespace LlmTornado.FineTuning;
+namespace LlmTornado.FineTuning
+{
 
 public sealed class HyperParameters
 {
@@ -12,4 +13,5 @@ public sealed class HyperParameters
 
     [JsonProperty("learning_rate_multiplier")]
     public int? LearningRateMultiplier { get; set; }
+}
 }

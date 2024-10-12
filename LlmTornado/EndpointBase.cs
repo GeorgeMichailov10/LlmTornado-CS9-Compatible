@@ -17,7 +17,8 @@ using LlmTornado.Common;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado;
+namespace LlmTornado
+{
 
 /// <summary>
 ///     A base object for any OpenAI API endpoint, encompassing common functionality
@@ -589,4 +590,5 @@ public abstract class EndpointBase
             CallResponse = response.HttpResult
         };
     }
+}
 }

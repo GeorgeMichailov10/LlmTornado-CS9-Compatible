@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class RunStepMessageCreation
 {
@@ -11,4 +12,5 @@ public sealed class RunStepMessageCreation
     [JsonInclude]
     [JsonProperty("message_id")]
     public string MessageId { get; private set; }
+}
 }

@@ -1,4 +1,5 @@
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public static class ThreadExtensions
 {
@@ -327,4 +328,5 @@ public static class ThreadExtensions
             => await run.Client.ThreadsEndpoint.ListMessagesAsync(run.ThreadId, query, cancellationToken);
 
         #endregion Runs*/
+}
 }

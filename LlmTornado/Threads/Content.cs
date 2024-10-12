@@ -3,7 +3,8 @@ using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class Content
 {
@@ -25,4 +26,5 @@ public sealed class Content
             _ => throw new ArgumentOutOfRangeException()
         };
     }
+}
 }

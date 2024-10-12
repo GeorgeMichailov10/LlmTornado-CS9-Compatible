@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class CodeInterpreter
 {
@@ -18,4 +19,5 @@ public sealed class CodeInterpreter
     /// </summary>
     [JsonProperty("outputs")]
     public IReadOnlyList<CodeInterpreterOutputs> Outputs { get; private set; }
+}
 }

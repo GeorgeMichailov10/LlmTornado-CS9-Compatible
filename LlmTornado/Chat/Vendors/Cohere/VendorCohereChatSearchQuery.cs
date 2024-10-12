@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 /// <summary>
 ///     The generated search query. Contains the text of the query and a unique identifier for the query.
@@ -19,4 +20,5 @@ public class VendorCohereChatSearchQuery
     /// </summary>
     [JsonProperty("generation_id")]
     public string GenerationId { get; set; }
+}
 }

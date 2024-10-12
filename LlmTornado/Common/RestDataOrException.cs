@@ -3,7 +3,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http;
 
-namespace LlmTornado.Common;
+namespace LlmTornado.Common
+{
 
 public class RestDataOrException<T>
 {
@@ -58,4 +59,5 @@ public class RestDataOrException<T>
     
     public IHttpCallResult? HttpResult { get; set; }
     public HttpCallRequest? HttpRequest { get; set; }
+}
 }

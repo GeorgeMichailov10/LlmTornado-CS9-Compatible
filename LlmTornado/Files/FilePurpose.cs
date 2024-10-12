@@ -1,4 +1,5 @@
-namespace LlmTornado.Files;
+namespace LlmTornado.Files
+{
 
 /// <summary>
 ///     Represents the file purpose, either the file is for fine-tuning and needs to be in JSONL format or for messages &
@@ -15,4 +16,5 @@ public enum FilePurpose
     ///     Supported content: https://platform.openai.com/docs/assistants/tools/supported-files
     /// </summary>
     Assistants
+}
 }

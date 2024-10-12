@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Threads;
+namespace LlmTornado.Threads
+{
 
 public sealed class CreateThreadRequest
 {
@@ -41,4 +42,5 @@ public sealed class CreateThreadRequest
     {
         return new CreateThreadRequest(new[] { new Message(message) });
     }
+}
 }

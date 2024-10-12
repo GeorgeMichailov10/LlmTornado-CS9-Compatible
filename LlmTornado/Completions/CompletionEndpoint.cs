@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using LlmTornado.Code;
 using LlmTornado.Models;
 
-namespace LlmTornado.Completions;
+namespace LlmTornado.Completions
+{
 
 /// <summary>
 ///     Text generation is the core function of the API. You give the API a prompt, and it generates a completion. The way
@@ -342,4 +343,5 @@ public class CompletionEndpoint : EndpointBase
     }
 
     #endregion
+}
 }

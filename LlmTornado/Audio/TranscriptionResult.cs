@@ -2,7 +2,8 @@
 using LlmTornado;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Audio;
+namespace LlmTornado.Audio
+{
 
 /// <summary>
 ///     Default format for transcript result.
@@ -117,4 +118,5 @@ public class TranscriptionSegment
     /// </summary>
     [JsonProperty("transient")]
     public bool Transient { get; set; }
+}
 }

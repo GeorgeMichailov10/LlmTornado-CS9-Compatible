@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Code.Models;
+namespace LlmTornado.Code.Models
+{
 
 public class ModelVendor<T> where T : ModelBase
 {
@@ -171,4 +172,5 @@ public abstract class ModelEmbeddingBase : ModelBase
     /// </summary>
     [JsonIgnore]
     public int? OutputDimensions { get; set; } 
+}
 }

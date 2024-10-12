@@ -1,6 +1,7 @@
 using LlmTornado.Chat.Vendors.Cohere;
 
-namespace LlmTornado.Chat;
+namespace LlmTornado.Chat
+{
 
 /// <summary>
 ///     Chat inbound features supported only by a single/few providers with no shared equivalent.
@@ -19,4 +20,5 @@ public class ChatResponseVendorExtensions
     {
         
     }
+}
 }

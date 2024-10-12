@@ -2,7 +2,8 @@
 using LlmTornado.Models;
 using Newtonsoft.Json;
 
-namespace LlmTornado.Moderation;
+namespace LlmTornado.Moderation
+{
 
 /// <summary>
 ///     Represents a request to the Moderations API.
@@ -86,4 +87,5 @@ public class ModerationRequest
 	/// </summary>
 	[JsonProperty("input")]
     public string[] Inputs { get; set; }
+}
 }

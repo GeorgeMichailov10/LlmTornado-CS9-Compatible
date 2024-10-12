@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public interface IChatPlugin
 {
@@ -24,4 +25,5 @@ public interface IChatPlugin
     {
         return new ChatFunctionCallResult(ChatFunctionCallResultParameterErrors.MalformedParam, name);
     }
+}
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace LlmTornado.Chat.Plugins;
+namespace LlmTornado.Chat.Plugins
+{
 
 public class ChatPluginExportResult
 {
@@ -10,4 +11,5 @@ public class ChatPluginExportResult
     {
         Functions = functions;
     }
+}
 }

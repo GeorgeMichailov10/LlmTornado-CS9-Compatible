@@ -14,7 +14,8 @@ using LlmTornado.Common;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace LlmTornado.Chat.Vendors.Cohere;
+namespace LlmTornado.Chat.Vendors.Cohere
+{
 
 internal class VendorCohereChatRequest
 {
@@ -331,3 +332,4 @@ internal class VendorCohereChatRequest
         }
     }
  }
+}

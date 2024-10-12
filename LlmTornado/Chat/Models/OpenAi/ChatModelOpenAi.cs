@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Known chat models from OpenAI.
@@ -58,4 +59,5 @@ public class ChatModelOpenAi : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

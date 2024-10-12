@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using LlmTornado.Code.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Known chat models provided by Groq.
@@ -70,4 +71,5 @@ public class ChatModelGroq : BaseVendorModelProvider
     {
         AllModels = ModelsAll;
     }
+}
 }

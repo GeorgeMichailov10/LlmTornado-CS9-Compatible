@@ -1,7 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace LlmTornado.FineTuning;
+namespace LlmTornado.FineTuning
+{
 
 public sealed class HyperParams
 {
@@ -16,4 +17,5 @@ public sealed class HyperParams
     [JsonInclude]
     [JsonProperty("learning_rate_multiplier")]
     public object LearningRateMultiplier { get; private set; }
+}
 }

@@ -3,7 +3,8 @@ using LlmTornado.Code;
 using LlmTornado.Code.Models;
 using LlmTornado.Models;
 
-namespace LlmTornado.Chat.Models;
+namespace LlmTornado.Chat.Models
+{
 
 /// <summary>
 /// Models supporting text based inference, such as chat or completions
@@ -147,4 +148,5 @@ public class ChatModel : ModelBase
     {
         return new ChatModel(name ?? string.Empty, name is null ? LLmProviders.OpenAi : GetProvider(name) ?? LLmProviders.OpenAi);
     }
+}
 }
