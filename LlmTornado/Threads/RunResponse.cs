@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace LlmTornado.Threads
 {
@@ -47,7 +48,7 @@ public sealed class RunResponse : BaseResponse
     /// </summary>
     [JsonInclude]
     [JsonProperty("status")]
-    [System.Text.Json.Serialization.JsonConverter(typeof(JsonStringEnumConverter<RunStatus>))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(StringEnumConverter))]
     public RunStatus Status { get; private set; }
 
     /// <summary>

@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace LlmTornado.Threads
 {
@@ -11,7 +12,7 @@ public sealed class CodeInterpreterOutputs
     ///     Output type. Can be either 'logs' or 'image'.
     /// </summary>
     [JsonProperty("type")]
-    [Newtonsoft.Json.JsonConverter(typeof(JsonStringEnumConverter<CodeInterpreterOutputType>))]
+    [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
     public CodeInterpreterOutputType Type { get; private set; }
 
     /// <summary>

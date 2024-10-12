@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using LlmTornado.Common;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace LlmTornado.Threads
 {
@@ -49,7 +50,7 @@ public sealed class RunStepResponse
     /// </summary>
     [JsonInclude]
     [JsonProperty("type")]
-    [System.Text.Json.Serialization.JsonConverter(typeof(JsonStringEnumConverter<RunStepType>))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(StringEnumConverter))]
     public RunStepType Type { get; private set; }
 
     /// <summary>
@@ -57,7 +58,7 @@ public sealed class RunStepResponse
     /// </summary>
     [JsonInclude]
     [JsonProperty("status")]
-    [System.Text.Json.Serialization.JsonConverter(typeof(JsonStringEnumConverter<RunStatus>))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(StringEnumConverter))]
     public RunStatus Status { get; private set; }
 
     /// <summary>
