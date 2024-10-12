@@ -36,8 +36,9 @@ def convert_single_namespace(file_path):
     convert_namespace(file_path)
 
 if __name__ == '__main__':
-    target_directory = '.'  # Replace with the target directory path
-    process_directory(target_directory)
+    # target_directory = '.'  
+    # Replace with the target directory path
+    # process_directory(target_directory)
     # Example usage for converting a single namespace
-    # single_file_path = 'path/to/your/file.cs'
-    # convert_single_namespace(single_file_path)
+    single_file_path = os.path.join(os.getcwd(), 'LlmTornado/Assistants/AssistantFileResponse.cs')
+    convert_single_namespace(single_file_path)
