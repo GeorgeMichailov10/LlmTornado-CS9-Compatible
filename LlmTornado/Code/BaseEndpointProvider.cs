@@ -46,7 +46,7 @@ public abstract class BaseEndpointProvider : IEndpointProviderExtended
     public abstract HttpRequestMessage OutboundMessage(string url, HttpMethod verb, object? data, bool streaming);
     public abstract HashSet<string> ToolFinishReasons { get;  }
     public ProviderAuthentication? Auth { get; set; }
-    static Version IEndpointProviderExtended.OutboundVersion { get; set; } = HttpVersion.Version20;
+    public virtual Version OutboundVersion { get; set; } = HttpVersion.Version20;
 
     private static Dictionary<Type, StreamRequestTypes> StreamTypes = new Dictionary<Type, StreamRequestTypes> {
         { typeof(ChatResult), StreamRequestTypes.Chat }

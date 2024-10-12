@@ -41,6 +41,6 @@ public interface IEndpointProvider
 /// </summary>
 public interface IEndpointProviderExtended
 {
-    public static abstract Version OutboundVersion { get; set; }
+    Version OutboundVersion { get; set; }
 }
 }

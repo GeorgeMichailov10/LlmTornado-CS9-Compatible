@@ -79,7 +79,7 @@ internal class OpenAiEndpointProvider : BaseEndpointProvider, IEndpointProvider,
     {
         HttpRequestMessage req = new(verb, url)
         {
-            Version = OutboundVersion
+            Version = this.OutboundVersion
         };
         req.Headers.Add("User-Agent", EndpointBase.GetUserAgent().Trim());
         req.Headers.Add("OpenAI-Beta", "assistants=v2");

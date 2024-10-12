@@ -135,7 +135,7 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
 
         HttpRequestMessage req = new(verb, uriBuilder.Uri) 
         {
-            Version = OutboundVersion
+            Version = this.OutboundVersion
         };
 
         req.Headers.Add("User-Agent", EndpointBase.GetUserAgent());
