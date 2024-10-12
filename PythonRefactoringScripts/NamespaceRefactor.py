@@ -1,44 +1,46 @@
 import os
 import re
 
-def convert_namespace(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        lines = file.readlines()
-
-    namespace_pattern = re.compile(r'^\s*namespace\s+(\w+);')
-    new_lines = []
-    namespace_found = False
-
-    for line in lines:
-        match = namespace_pattern.match(line)
-        if match and not namespace_found:
-            namespace_name = match.group(1)
-            new_lines.append(f'namespace {namespace_name}\n{{\n')
-            namespace_found = True
-        else:
-            new_lines.append(line)
-
-    if namespace_found:
-        # Ensure the file ends with a closing brace
-        if not new_lines[-1].strip().endswith('}'):
-            new_lines.append('}\n')
-        with open(file_path, 'w', encoding='utf-8') as file:
-            file.writelines(new_lines)
-
-def process_directory(directory):
+def refactor_namespace(directory):
+    print(f"Processing directory: {directory}")
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.endswith('.cs'):
                 file_path = os.path.join(root, file)
-                convert_namespace(file_path)
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
 
-def convert_single_namespace(file_path):
-    convert_namespace(file_path)
+                # Search for the C# 10 namespace syntax
+                pattern = r'^namespace\s+([^;]+);'
+                match = re.search(pattern, content, re.MULTILINE)
 
-if __name__ == '__main__':
-    # target_directory = '.'  
-    # Replace with the target directory path
-    # process_directory(target_directory)
-    # Example usage for converting a single namespace
-    single_file_path = os.path.join(os.getcwd(), 'LlmTornado/Assistants/AssistantFileResponse.cs')
-    convert_single_namespace(single_file_path)
+                if match:
+                    # Replace with C# 9 namespace syntax
+                    new_content = re.sub(pattern, r'namespace \1\n{', content, count=1, flags=re.MULTILINE)
+                    new_content += '\n}'  # Add closing bracket at the end of the file
+
+                    # Write the modified content back to the file
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(new_content)
+                    print(f"Refactored: {file_path}")
+                else:
+                    print(f"No namespace declaration found in: {file_path}")
+
+if __name__ == "__main__":
+    # Get the parent directory of the script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(script_dir)
+    
+    # Get all directories in the parent directory, excluding the script's directory
+    project_directories = [d for d in os.listdir(parent_dir) if os.path.isdir(os.path.join(parent_dir, d)) and d != os.path.basename(script_dir)]
+    
+    print("Processing the following directories:")
+    for dir_name in project_directories:
+        print(f"- {dir_name}")
+    
+    # Process each directory
+    for dir_name in project_directories:
+        directory_path = os.path.join(parent_dir, dir_name)
+        refactor_namespace(directory_path)
+
+    print("Refactoring complete.")
