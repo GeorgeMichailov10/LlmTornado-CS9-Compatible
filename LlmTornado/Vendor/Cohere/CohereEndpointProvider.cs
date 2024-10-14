@@ -419,7 +419,7 @@ internal class CohereEndpointProvider : BaseEndpointProvider, IEndpointProvider,
     {
         HttpRequestMessage req = new(verb, url) 
         {
-            Version = this.OutboundVersion
+            Version = CohereEndpointProvider.OutboundVersion
         };
         req.Headers.Add("User-Agent", EndpointBase.GetUserAgent());
 

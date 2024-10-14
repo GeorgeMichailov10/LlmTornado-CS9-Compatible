@@ -369,7 +369,7 @@ internal class AnthropicEndpointProvider : BaseEndpointProvider, IEndpointProvid
     {
         HttpRequestMessage req = new(verb, url)
         {
-            Version = this.OutboundVersion
+            Version = AnthropicEndpointProvider.OutboundVersion
         };
         
         req.Headers.Add("User-Agent", EndpointBase.GetUserAgent());
