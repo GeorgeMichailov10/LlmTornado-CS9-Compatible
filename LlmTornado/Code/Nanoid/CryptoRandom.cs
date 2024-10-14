@@ -32,7 +32,10 @@ internal class CryptoRandom : Random
     /// <exception cref="ArgumentNullException"></exception>
     public override void NextBytes(byte[] buffer)
     {
-        ArgumentNullException.ThrowIfNull(buffer);
+        if (buffer == null)
+        {
+            throw new ArgumentNullException(nameof(buffer));
+        }
         r.GetBytes(buffer);
     }
     
@@ -56,7 +59,10 @@ internal class CryptoRandom : Random
     /// <exception cref="T:System.ArgumentOutOfRangeException"></exception>
     public override int Next(int minValue, int maxValue)
     {
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(minValue, maxValue);
+        if (minValue > maxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(minValue), "minValue cannot be greater than maxValue.");
+        }
         if (minValue == maxValue) return minValue;
         long range = (long)maxValue - minValue;
         return (int)((long)Math.Floor(NextDouble() * range) + minValue);
@@ -79,7 +85,10 @@ internal class CryptoRandom : Random
     /// <exception cref="T:System.ArgumentOutOfRangeException"></exception>
     public override int Next(int maxValue)
     {
-        ArgumentOutOfRangeException.ThrowIfNegative(maxValue);
+        if (maxValue < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(maxValue), "maxValue cannot be negative.");
+        }
         return Next(0, maxValue);
     }
 }
