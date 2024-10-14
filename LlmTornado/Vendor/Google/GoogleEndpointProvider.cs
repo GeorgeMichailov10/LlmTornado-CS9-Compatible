@@ -56,41 +56,43 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
         ChatMessage? plaintextAccu = null;
         ChatUsage? usage = null;
 
-        await using JsonTextReader jsonReader = new JsonTextReader(reader);
-        JsonSerializer serializer = new JsonSerializer();
-            
-        if (await jsonReader.ReadAsync() && jsonReader.TokenType is JsonToken.StartArray)
+        using (var reader = new JsonTextReader(reader))
         {
-            while (await jsonReader.ReadAsync())
+            JsonSerializer serializer = new JsonSerializer();
+            
+            if (await reader.ReadAsync() && reader.TokenType is JsonToken.StartArray)
             {
-                if (jsonReader.TokenType is JsonToken.StartObject)
+                while (await reader.ReadAsync())
                 {
-                    VendorGoogleChatResult? obj = serializer.Deserialize<VendorGoogleChatResult>(jsonReader);
-
-                    if (obj is not null)
+                    if (reader.TokenType is JsonToken.StartObject)
                     {
-                        foreach (VendorGoogleChatResult.VendorGoogleChatResultMessage candidate in obj.Candidates)
+                        VendorGoogleChatResult? obj = serializer.Deserialize<VendorGoogleChatResult>(reader);
+
+                        if (obj is not null)
                         {
-                            foreach (VendorGoogleChatRequest.VendorGoogleChatRequestMessagePart part in candidate.Content.Parts)
+                            foreach (VendorGoogleChatResult.VendorGoogleChatResultMessage candidate in obj.Candidates)
                             {
-                                if (part.Text is not null)
+                                foreach (VendorGoogleChatRequest.VendorGoogleChatRequestMessagePart part in candidate.Content.Parts)
                                 {
-                                    plaintextAccu ??= new ChatMessage();
-                                    plaintextAccu.ContentBuilder ??= new StringBuilder();
-                                    plaintextAccu.ContentBuilder.Append(part.Text);
+                                    if (part.Text is not null)
+                                    {
+                                        plaintextAccu ??= new ChatMessage();
+                                        plaintextAccu.ContentBuilder ??= new StringBuilder();
+                                        plaintextAccu.ContentBuilder.Append(part.Text);
+                                    }
                                 }
                             }
+                            
+                            ChatResult chatResult = obj.ToChatResult(null);
+                            usage = chatResult.Usage;
+                            
+                            yield return chatResult;
                         }
-                        
-                        ChatResult chatResult = obj.ToChatResult(null);
-                        usage = chatResult.Usage;
-                        
-                        yield return chatResult;
                     }
-                }
-                else if (jsonReader.TokenType is JsonToken.EndArray)
-                {
-                    break;
+                    else if (reader.TokenType is JsonToken.EndArray)
+                    {
+                        break;
+                    }
                 }
             }
         }
