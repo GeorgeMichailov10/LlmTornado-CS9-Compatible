@@ -1,6 +1,8 @@
 using LlmTornado.Embedding;
 using LlmTornado.Embedding.Models;
 using LlmTornado.Embedding.Vendors.Cohere;
+using System;
+using System.Threading.Tasks;
 
 namespace LlmTornado.Demo
 {

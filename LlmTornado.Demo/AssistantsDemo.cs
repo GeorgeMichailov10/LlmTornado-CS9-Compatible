@@ -2,6 +2,8 @@ using LlmTornado.Assistants;
 using LlmTornado.Common;
 using LlmTornado.Models;
 using File = LlmTornado.Files.File;
+using System;
+using System.Threading.Tasks;
 
 namespace LlmTornado.Demo
 {
