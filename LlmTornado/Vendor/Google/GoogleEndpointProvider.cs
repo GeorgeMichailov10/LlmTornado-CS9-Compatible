@@ -22,7 +22,7 @@ namespace LlmTornado.Code.Vendor
 /// </summary>
 internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider, IEndpointProviderExtended
 {
-    private static readonly HashSet<string> toolFinishReasons = [ "tool_use" ];
+    private static readonly HashSet<string> toolFinishReasons = new HashSet<string> { "tool_use" };
     
     public static Version OutboundVersion { get; set; } = HttpVersion.Version20;
     public override HashSet<string> ToolFinishReasons => toolFinishReasons;
@@ -56,17 +56,18 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
         ChatMessage? plaintextAccu = null;
         ChatUsage? usage = null;
 
-        using (var reader = new JsonTextReader(reader))
+        // Rename the local variable from 'reader' to 'jsonReader' to avoid conflict
+        using (var jsonReader = new JsonTextReader(reader))
         {
             JsonSerializer serializer = new JsonSerializer();
             
-            if (await reader.ReadAsync() && reader.TokenType is JsonToken.StartArray)
+            if (await jsonReader.ReadAsync() && jsonReader.TokenType is JsonToken.StartArray)
             {
-                while (await reader.ReadAsync())
+                while (await jsonReader.ReadAsync())
                 {
-                    if (reader.TokenType is JsonToken.StartObject)
+                    if (jsonReader.TokenType is JsonToken.StartObject)
                     {
-                        VendorGoogleChatResult? obj = serializer.Deserialize<VendorGoogleChatResult>(reader);
+                        VendorGoogleChatResult? obj = serializer.Deserialize<VendorGoogleChatResult>(jsonReader);
 
                         if (obj is not null)
                         {
@@ -89,7 +90,7 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
                             yield return chatResult;
                         }
                     }
-                    else if (reader.TokenType is JsonToken.EndArray)
+                    else if (jsonReader.TokenType is JsonToken.EndArray)
                     {
                         break;
                     }
@@ -101,8 +102,8 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
         {
             yield return new ChatResult
             {
-                Choices =
-                [
+                Choices = new List<ChatChoice> // Corrected from square brackets to List initialization
+                {
                     new ChatChoice
                     {
                         Delta = new ChatMessage
@@ -110,7 +111,7 @@ internal class GoogleEndpointProvider : BaseEndpointProvider, IEndpointProvider,
                             Content = plaintextAccu.ContentBuilder?.ToString()
                         }
                     }
-                ],
+                },
                 StreamInternalKind = ChatResultStreamInternalKinds.AppendAssistantMessage,
                 Usage = usage
             };
