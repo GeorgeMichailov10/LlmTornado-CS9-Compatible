@@ -207,7 +207,7 @@ public abstract class EndpointBase
         
         try
         {
-            HttpResponseMessage response = await client.SendAsync(req, streaming ? HttpCompletionOption.ResponseHeadersRead : HttpCompletionOption.ResponseContentRead, ct ?? CancellationToken.None).ConfigureAwait(ConfigureAwaitOptions.None);
+            HttpResponseMessage response = await client.SendAsync(req, streaming ? HttpCompletionOption.ResponseHeadersRead : HttpCompletionOption.ResponseContentRead, ct ?? CancellationToken.None).ConfigureAwait(false);
 
             if (response.IsSuccessStatusCode)
             {
@@ -277,7 +277,7 @@ public abstract class EndpointBase
         
         try
         {
-            HttpResponseMessage result = await client.SendAsync(req, streaming ? HttpCompletionOption.ResponseHeadersRead : HttpCompletionOption.ResponseContentRead, ct ?? CancellationToken.None).ConfigureAwait(ConfigureAwaitOptions.None);
+            HttpResponseMessage result = await client.SendAsync(req, streaming ? HttpCompletionOption.ResponseHeadersRead : HttpCompletionOption.ResponseContentRead, ct ?? CancellationToken.None).ConfigureAwait(false);
             
             if (result.IsSuccessStatusCode)
             {
@@ -332,8 +332,8 @@ public abstract class EndpointBase
     /// <exception cref="HttpRequestException">Throws an exception if a non-success HTTP response was returned</exception>
     internal async Task<string> HttpGetContent(IEndpointProvider provider, CapabilityEndpoints endpoint, string? url = null, CancellationToken? ct = null)
     {
-        using HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, ct: ct).ConfigureAwait(ConfigureAwaitOptions.None);
-        return await response.Content.ReadAsStringAsync().ConfigureAwait(ConfigureAwaitOptions.None);
+        using HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, ct: ct).ConfigureAwait(false);
+        return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
     }
 
     /// <summary>
@@ -359,8 +359,8 @@ public abstract class EndpointBase
     /// </exception>
     private async Task<T?> HttpRequest<T>(IEndpointProvider provider, CapabilityEndpoints endpoint, string? url = null, HttpMethod? verb = null, object? postData = null, CancellationToken? ct = null) where T : ApiResultBase
     {
-        using HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, verb, postData, false, ct).ConfigureAwait(ConfigureAwaitOptions.None);
-        string resultAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(ConfigureAwaitOptions.None);
+        using HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, verb, postData, false, ct).ConfigureAwait(false);
+        string resultAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
         T? res = provider.InboundMessage<T>(resultAsString, postData?.ToString());
         
         if (res is not null)
@@ -373,7 +373,7 @@ public abstract class EndpointBase
 
     private async Task<HttpCallResult<T>> HttpRequestRaw<T>(IEndpointProvider provider, CapabilityEndpoints endpoint, string? url = null, HttpMethod? verb = null, object? postData = null, CancellationToken? ct = null)
     {
-        RestDataOrException<HttpResponseMessage> response = await HttpRequestRawWithAllCodes(provider, endpoint, url, verb, postData, false, ct).ConfigureAwait(ConfigureAwaitOptions.None);
+        RestDataOrException<HttpResponseMessage> response = await HttpRequestRawWithAllCodes(provider, endpoint, url, verb, postData, false, ct).ConfigureAwait(false);
 
         if (response.Exception is not null)
         {
@@ -391,7 +391,7 @@ public abstract class EndpointBase
             };
         }
         
-        string resultAsString = await response.Data.Content.ReadAsStringAsync().ConfigureAwait(ConfigureAwaitOptions.None);
+        string resultAsString = await response.Data.Content.ReadAsStringAsync().ConfigureAwait(false);
         HttpCallResult<T> result = new(response.Data.StatusCode, resultAsString, default, response.Data.IsSuccessStatusCode, response);
 
         if (response.Data.IsSuccessStatusCode)
@@ -405,8 +405,8 @@ public abstract class EndpointBase
 
     private async Task<StreamResponse?> HttpRequestStream(IEndpointProvider provider, CapabilityEndpoints endpoint, string? url = null, HttpMethod? verb = null, object? postData = null, CancellationToken ct = default)
     {
-        HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, verb, postData, ct: ct).ConfigureAwait(ConfigureAwaitOptions.None);
-        Stream resultAsStream = await response.Content.ReadAsStreamAsync(ct).ConfigureAwait(ConfigureAwaitOptions.None);
+        HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, verb, postData, ct: ct).ConfigureAwait(false);
+        Stream resultAsStream = await response.Content.ReadAsStreamAsync(ct).ConfigureAwait(false);
 
         StreamResponse res = new()
         {
@@ -548,7 +548,7 @@ public abstract class EndpointBase
     /// <exception cref="HttpRequestException">Throws an exception if a non-success HTTP response was returned</exception>
     protected async IAsyncEnumerable<T> HttpStreamingRequest<T>(IEndpointProvider provider, CapabilityEndpoints endpoint, string? url = null, HttpMethod? verb = null, object? postData = null, Ref<string>? requestRef = null, CancellationToken token = default) where T : ApiResultBase
     {
-        using HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, verb, postData, true).ConfigureAwait(ConfigureAwaitOptions.None);
+        using HttpResponseMessage response = await HttpRequestRaw(provider, endpoint, url, verb, postData, true).ConfigureAwait(false);
         await using Stream stream = await response.Content.ReadAsStreamAsync(token);
         using StreamReader reader = new(stream);
 
@@ -566,7 +566,7 @@ public abstract class EndpointBase
     
     protected async Task<TornadoStreamRequest> HttpStreamingRequestData(IEndpointProvider provider, CapabilityEndpoints endpoint, string? url = null, HttpMethod? verb = null, object? postData = null, CancellationToken token = default)
     {
-        RestDataOrException<HttpResponseMessage> response = await HttpRequestRawWithAllCodes(provider, endpoint, url, verb, postData, true, token).ConfigureAwait(ConfigureAwaitOptions.None);
+        RestDataOrException<HttpResponseMessage> response = await HttpRequestRawWithAllCodes(provider, endpoint, url, verb, postData, true, token).ConfigureAwait(false);
 
         if (response.Exception is not null || response.Data is null)
         {

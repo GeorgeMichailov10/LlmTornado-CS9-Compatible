@@ -35,7 +35,7 @@ public class FilesEndpoint : EndpointBase
 	/// <exception cref="HttpRequestException"></exception>
 	public async Task<List<File>?> GetFilesAsync()
     {
-        return (await HttpGet<FilesData>(Api.GetProvider(LLmProviders.OpenAi), Endpoint).ConfigureAwait(ConfigureAwaitOptions.None))?.Data;
+        return (await HttpGet<FilesData>(Api.GetProvider(LLmProviders.OpenAi), Endpoint).ConfigureAwait(false))?.Data;
     }
 
 	/// <summary>
@@ -84,10 +84,10 @@ public class FilesEndpoint : EndpointBase
         MultipartFormDataContent content = new()
         {
             { new StringContent(purpose is FilePurpose.Finetune ? "fine-tune" : "assistants"), "purpose" },
-            { new ByteArrayContent(await System.IO.File.ReadAllBytesAsync(filePath).ConfigureAwait(ConfigureAwaitOptions.None)), "file", Path.GetFileName(filePath) }
+            { new ByteArrayContent(await System.IO.File.ReadAllBytesAsync(filePath).ConfigureAwait(false)), "file", Path.GetFileName(filePath) }
         };
 
-        return await HttpPost<File>(Api.GetProvider(LLmProviders.OpenAi), CapabilityEndpoints.Files, GetUrl(Api.GetProvider(LLmProviders.OpenAi)), content).ConfigureAwait(ConfigureAwaitOptions.None);
+        return await HttpPost<File>(Api.GetProvider(LLmProviders.OpenAi), CapabilityEndpoints.Files, GetUrl(Api.GetProvider(LLmProviders.OpenAi)), content).ConfigureAwait(false);
     }
 
 	/// <summary>
