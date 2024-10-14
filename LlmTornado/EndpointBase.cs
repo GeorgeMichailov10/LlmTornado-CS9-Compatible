@@ -244,7 +244,7 @@ public abstract class EndpointBase
             {
                 Method = req.Method,
                 Url = req.RequestUri?.AbsolutePath ?? string.Empty,
-                Headers = req.Headers.ToDictionary()
+                Headers = req.Headers.ToDictionary(pair => pair.Key, pair => pair.Value)
             };
 
             throw response.StatusCode switch
