@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace LlmTornado.Code
 {
@@ -221,7 +222,7 @@ internal static class Nanoid
 
         // Use `Int32.LeadingZeroCount` on .net7 and above
       
-        int mask = (2 << 31 - int.LeadingZeroCount(alphabet.Length - 1 | 1)) - 1;
+        int mask = (2 << 31 - BitOperations.LeadingZeroCount((uint)(alphabet.Length - 1 | 1))) - 1;
         
         // Original dev notes regarding this algorithm.
         // Source: https://github.com/ai/nanoid/blob/0454333dee4612d2c2e163d271af6cc3ce1e5aa4/index.js#L45
