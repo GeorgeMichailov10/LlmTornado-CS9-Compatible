@@ -173,11 +173,13 @@ public static class ChatDemo
     {
         // 1. set up a sample tool using strongly typed model
         ChatPluginCompiler compiler = new ChatPluginCompiler();
-        compiler.SetFunctions([
-            new ChatPluginFunction("get_weather", "gets the current weather in a given city", [
+        compiler.SetFunctions(new List<ChatPluginFunction>
+        {
+            new ChatPluginFunction("get_weather", "gets the current weather in a given city", new List<ChatFunctionParam>
+            {
                 new ChatFunctionParam("city_name", "name of the city", ChatPluginFunctionAtomicParamTypes.String)
-            ])
-        ]);
+            })
+        });
         
         // 2. in this scenario, the conversation starts with the user asking for the current weather in two of the supported cities.
         // we can try asking for the weather in the third supported city (Paris) later.
@@ -521,13 +523,13 @@ public static class ChatDemo
             new ProviderAuthentication(LLmProviders.Cohere, Program.ApiKeys.Cohere)
         });
 
-        List<ChatModel> models =
-        [
+        List<ChatModel> models = new List<ChatModel>
+        {
             ChatModel.OpenAi.Gpt4.Turbo,
             ChatModel.Anthropic.Claude3.Sonnet,
             ChatModel.Cohere.Command.Default,
             ChatModel.Google.Gemini.Gemini15Flash
-        ];
+        };
         
         foreach (ChatModel model in models)
         {
