@@ -3,6 +3,8 @@ using LlmTornado.Embedding.Models;
 using LlmTornado.Embedding.Vendors.Cohere;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LlmTornado.Demo
 {
