@@ -19,9 +19,10 @@ public static class VisionDemo
     {
         ChatResult? result = await Program.Connect().Chat.CreateChatCompletionAsync(new ChatMessage[]
         {
-            new(ChatMessageRoles.User, [
+            new(ChatMessageRoles.User, new List<ChatMessagePart>
+            {
                 new ChatMessagePart(new Uri("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSGfpQ3m-QWiXgCBJJbrcUFdNdWAhj7rcUqjeNUC6eKcXZDAtWm"))
-            ]),
+            }),
             new(ChatMessageRoles.User, "What is on this image?")
         }, ChatModel.OpenAi.Gpt4.VisionPreview, maxTokens: 256);
 
@@ -35,9 +36,10 @@ public static class VisionDemo
 
         ChatResult? result = await Program.Connect().Chat.CreateChatCompletionAsync(new ChatMessage[]
         {
-            new(ChatMessageRoles.User, [
+            new(ChatMessageRoles.User, new List<ChatMessagePart>
+            {
                 new ChatMessagePart(base64, ImageDetail.Auto)
-            ]),
+            }),
             new(ChatMessageRoles.User, "What is on this image?")
         }, ChatModel.OpenAi.Gpt4.VisionPreview, maxTokens: 256);
 

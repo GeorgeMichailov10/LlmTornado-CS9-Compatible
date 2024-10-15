@@ -122,13 +122,14 @@ public class Program
 
     public static TornadoApi ConnectMulti()
     {
-        return new TornadoApi([
+        return new TornadoApi(new List<ProviderAuthentication>
+        {
             new ProviderAuthentication(LLmProviders.OpenAi, ApiKeys.OpenAi),
             new ProviderAuthentication(LLmProviders.Anthropic, ApiKeys.Anthropic),
             new ProviderAuthentication(LLmProviders.Cohere, ApiKeys.Cohere),
             new ProviderAuthentication(LLmProviders.Google, ApiKeys.Google),
             new ProviderAuthentication(LLmProviders.Groq, ApiKeys.Groq)
-        ]);
+        });
     }
     
     public static TornadoApi Connect(LLmProviders provider = LLmProviders.OpenAi)
