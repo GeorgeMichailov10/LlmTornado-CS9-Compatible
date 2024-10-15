@@ -1,6 +1,10 @@
 using LlmTornado.Chat.Models;
 using LlmTornado.Code.Models;
 using LlmTornado.Demo;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LlmTornado.Tests
 {
