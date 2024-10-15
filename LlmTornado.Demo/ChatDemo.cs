@@ -24,10 +24,11 @@ public static class ChatDemo
         {
             Model = ChatModel.OpenAi.Gpt4.Turbo,
             ResponseFormat = ChatRequestResponseFormats.Json,
-            Messages = [
+            Messages = new List<ChatMessage>
+            {
                 new ChatMessage(ChatMessageRoles.System, "Solve the math problem given by user, respond in JSON format."),
-                new ChatMessage(ChatMessageRoles.User, "2+2=?")
-            ]
+                new ChatMessage(ChatMessageRoles.User, "2+2=?"),
+            }
         });
 
         Console.WriteLine(result?.Choices?.Count > 0 ? result.Choices?[0].Message?.Content : "no response");
@@ -949,7 +950,8 @@ public static class ChatDemo
         StringBuilder sb = new StringBuilder();
         
         Conversation chat = Program.Connect().Chat.CreateConversation();
-        chat.RequestParameters.Tools = [
+        chat.RequestParameters.Tools = new List<Tool>
+        {
             new Tool(new ToolFunction("get_weather", "gets the current weather", new
             {
                 type = "object",
@@ -963,7 +965,7 @@ public static class ChatDemo
                 },
                 required = new List<string> { "arg1" }
             }))
-        ];
+        };
         chat.OnAfterToolsCall = async (result) =>
         {
             string? str = await chat.GetResponse();
@@ -984,7 +986,7 @@ public static class ChatDemo
             return Task.CompletedTask;
         }, functions =>
         {
-            List<FunctionResult> results = [];
+            List<FunctionResult> results = new List<FunctionResult>();
             
             foreach (FunctionCall fn in functions)
             {
