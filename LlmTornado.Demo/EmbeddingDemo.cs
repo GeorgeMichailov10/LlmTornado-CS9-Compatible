@@ -27,7 +27,7 @@ public static class EmbeddingDemo
     
     public static async Task EmbedVector()
     {
-        EmbeddingResult? result = await Program.ConnectMulti().Embeddings.CreateEmbedding(EmbeddingModel.OpenAi.Gen2.Ada, [ "how are you", "how are you doing" ]);
+        EmbeddingResult? result = await Program.ConnectMulti().Embeddings.CreateEmbedding(EmbeddingModel.OpenAi.Gen2.Ada, new List<string> { "how are you", "how are you doing" });
         Console.WriteLine(result?.Data.Count ?? 0);
     }
 
@@ -77,7 +77,7 @@ public static class EmbeddingDemo
     
     public static async Task EmbedCohereVector()
     {
-        EmbeddingResult? result = await Program.ConnectMulti().Embeddings.CreateEmbedding(EmbeddingModel.Cohere.Gen3.Multilingual, [ "lorem ipsum", "dolor sit amet" ]);
+        EmbeddingResult? result = await Program.ConnectMulti().Embeddings.CreateEmbedding(EmbeddingModel.Cohere.Gen3.Multilingual, new List<string> { "lorem ipsum", "dolor sit amet" });
         Console.WriteLine($"Count: {result?.Data.Count ?? 0}, dims: {result?.Data.FirstOrDefault()?.Embedding.Length ?? 0}");
         
         if (result is not null)
