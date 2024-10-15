@@ -802,7 +802,8 @@ public static class ChatDemo
         Conversation chat = Program.Connect(LLmProviders.Anthropic).Chat.CreateConversation(new ChatRequest
         {
             Model = ChatModel.Anthropic.Claude3.Sonnet,
-            Tools = [
+            Tools = new List<Tool>
+            {
                 new Tool(new ToolFunction("get_weather", "gets the current weather", new
                 {
                     type = "object",
@@ -816,7 +817,7 @@ public static class ChatDemo
                     },
                     required = new List<string> { "location" }
                 }))
-            ],
+            },
             ToolChoice = new OutboundToolChoice("get_weather")
         });
 
@@ -861,7 +862,8 @@ public static class ChatDemo
         Conversation chat = Program.Connect(LLmProviders.Anthropic).Chat.CreateConversation(new ChatRequest
         {
             Model = ChatModel.Anthropic.Claude3.Sonnet,
-            Tools = [
+            Tools = new List<Tool>
+            {
                 new Tool(new ToolFunction("get_weather", "gets the current weather", new
                 {
                     type = "object",
@@ -875,7 +877,7 @@ public static class ChatDemo
                     },
                     required = new List<string> { "location" }
                 }))
-            ]
+            },
         });
 
         chat.OnAfterToolsCall = async (result) =>
