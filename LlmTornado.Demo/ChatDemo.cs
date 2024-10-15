@@ -60,10 +60,11 @@ public static class ChatDemo
         {
             Model =  ChatModel.Groq.Meta.Llama370B,
             ResponseFormat = ChatRequestResponseFormats.Json,
-            Messages = [
+            Messages = new List<ChatMessage>
+            {
                 new ChatMessage(ChatMessageRoles.System, "Solve the math problem given by user, respond in JSON format."),
                 new ChatMessage(ChatMessageRoles.User, "2+2=?")
-            ]
+            }
         });
 
         Console.WriteLine(result?.Choices?.Count > 0 ? result.Choices?[0].Message?.Content : "no response");

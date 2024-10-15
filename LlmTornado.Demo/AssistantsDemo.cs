@@ -92,7 +92,7 @@ public static class AssistantsDemo
         HttpCallResult<AssistantResponse> result = await Program.Connect().Assistants.CreateAssistantAsync(new CreateAssistantRequest(Model.GPT35_Turbo_1106, "model1", "test model", "system prompt", new List<Tool>
         {
             Tool.Retrieval
-        }, [file?.Id]));
+        }, file?.Id != null ? new List<string> { file.Id } : null));
 
         return result.Data;
     }
