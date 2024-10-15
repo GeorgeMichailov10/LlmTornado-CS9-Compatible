@@ -125,9 +125,10 @@ public static class ChatDemo
         Conversation chat = Program.Connect(LLmProviders.Cohere).Chat.CreateConversation(new ChatRequest
         {
             Model = ChatModel.Cohere.Command.Default,
-            VendorExtensions = new ChatRequestVendorExtensions(new ChatRequestVendorCohereExtensions([
+            VendorExtensions = new ChatRequestVendorExtensions(new ChatRequestVendorCohereExtensions(new List<ChatVendorCohereExtensionConnector>
+            {
                 ChatVendorCohereExtensionConnector.WebConnector
-            ]))
+            }))
         });
         
         chat.AppendSystemMessage("You are a helpful assistant connected to the internet tasked with fetching the latest information as requested by the user.");
@@ -267,11 +268,13 @@ public static class ChatDemo
         
         // 1. set up a sample tool using strongly typed model
         ChatPluginCompiler compiler = new ChatPluginCompiler();
-        compiler.SetFunctions([
-            new ChatPluginFunction("get_weather", "gets the current weather in one given city", [
+        compiler.SetFunctions(new List<ChatPluginFunction>
+        {
+            new ChatPluginFunction("get_weather", "gets the current weather in one given city", new List<ChatFunctionParam>
+            {
                 new ChatFunctionParam("city_name", "name of the city", ChatPluginFunctionAtomicParamTypes.String)
-            ])
-        ]);
+            })
+        });
         
         // 2. in this scenario, the conversation starts with the user asking for the current weather in two of the supported cities.
         // we can try asking for the weather in the third supported city (Paris) later.
@@ -387,9 +390,10 @@ public static class ChatDemo
         Conversation chat = Program.Connect(LLmProviders.Cohere).Chat.CreateConversation(new ChatRequest
         {
             Model = ChatModel.Cohere.Command.Default,
-            VendorExtensions = new ChatRequestVendorExtensions(new ChatRequestVendorCohereExtensions([
+            VendorExtensions = new ChatRequestVendorExtensions(new ChatRequestVendorCohereExtensions(new List<ChatVendorCohereExtensionConnector>
+            {
                 ChatVendorCohereExtensionConnector.WebConnector
-            ]))
+            }))
         });
         
         chat.AppendSystemMessage("You are a helpful assistant connected to the internet tasked with fetching the latest information as requested by the user.");
@@ -592,8 +596,8 @@ public static class ChatDemo
         Conversation chat = Program.Connect().Chat.CreateConversation(new ChatRequest
             {
                 Model = ChatModel.OpenAi.Gpt4.O,
-                Tools =
-                [
+                Tools = new List<Tool>
+                {
                     new Tool(new ToolFunction("get_weather", "gets the current weather", new
                     {
                         type = "object",
@@ -607,7 +611,7 @@ public static class ChatDemo
                         },
                         required = new List<string> { "location" }
                     }))
-                ],
+                },
                 MaxTokens = 256
             })
             .AppendSystemMessage("You are a helpful assistant")
@@ -636,8 +640,8 @@ public static class ChatDemo
         Conversation chat = Program.Connect().Chat.CreateConversation(new ChatRequest
             {
                 Model = ChatModel.OpenAi.Gpt4.O,
-                Tools =
-                [
+                Tools = new List<Tool>
+                {
                     new Tool(new ToolFunction("get_weather", "gets the current weather", new
                     {
                         type = "object",
@@ -651,7 +655,7 @@ public static class ChatDemo
                         },
                         required = new List<string> { "location" }
                     }))
-                ],
+                },
                 ParallelToolCalls = false
             })
             .AppendSystemMessage("You are a helpful assistant")
@@ -682,7 +686,8 @@ public static class ChatDemo
         Conversation chat = Program.Connect(LLmProviders.Anthropic).Chat.CreateConversation(new ChatRequest
         {
             Model = ChatModel.Anthropic.Claude3.Sonnet,
-            Tools = [
+            Tools = new List<Tool>
+            {
                 new Tool(new ToolFunction("get_weather", "gets the current weather", new
                 {
                     type = "object",
@@ -696,7 +701,7 @@ public static class ChatDemo
                     },
                     required = new List<string> { "location" }
                 }))
-            ],
+            },
             ToolChoice = new OutboundToolChoice("get_weather")
         });
 
@@ -742,7 +747,8 @@ public static class ChatDemo
         Conversation chat = Program.Connect(LLmProviders.Google).Chat.CreateConversation(new ChatRequest
         {
             Model = ChatModel.Google.Gemini.Gemini15Flash,
-            Tools = [
+            Tools = new List<Tool>
+            {
                 new Tool(new ToolFunction("get_weather", "gets the current weather", new
                 {
                     type = "object",
@@ -756,7 +762,7 @@ public static class ChatDemo
                     },
                     required = new List<string> { "location" }
                 }))
-            ],
+            },
             ToolChoice = new OutboundToolChoice("get_weather")
         });
 
