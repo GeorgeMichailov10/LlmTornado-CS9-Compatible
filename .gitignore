@@ -343,3 +343,7 @@ LlmTornado.Tests/apiKey.json
 
 # Python Refactoring Scripts
 PythonRefactoringScripts/
+
+LlmTornado.Demo/apiKeyPrototype.json
+
+AmyriaSimpleChat/
